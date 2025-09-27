@@ -30,22 +30,26 @@ A modern, responsive personal portfolio website built with React, Vite, and Tail
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/BishalAdhikari0123/portfolio-website.git
 cd portfolio-website
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 ```
 
 3. Start development server
+
 ```bash
 npm run dev
 ```
 
 4. Build for production
+
 ```bash
 npm run build
 ```
@@ -63,11 +67,13 @@ npm run build
 ### GitHub Pages
 
 1. Install GitHub Pages package:
+
 ```bash
 npm install --save-dev gh-pages
 ```
 
 2. Add to `package.json`:
+
 ```json
 {
   "homepage": "https://BishalAdhikari0123.github.io/portfolio-website",
@@ -79,17 +85,19 @@ npm install --save-dev gh-pages
 ```
 
 3. Update `vite.config.ts`:
+
 ```typescript
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio-website/',
+  base: "/portfolio-website/",
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    exclude: ["lucide-react"],
   },
 });
 ```
 
 4. Deploy:
+
 ```bash
 npm run deploy
 ```
@@ -97,6 +105,7 @@ npm run deploy
 ### Cloudflare Pages
 
 1. Build the project:
+
 ```bash
 npm run build
 ```
@@ -112,11 +121,13 @@ npm run build
 ### Vercel
 
 1. Install Vercel CLI:
+
 ```bash
 npm install -g vercel
 ```
 
 2. Deploy:
+
 ```bash
 vercel --prod
 ```
@@ -128,12 +139,14 @@ Or connect your GitHub repository directly through the Vercel dashboard.
 ### Colors
 
 The color scheme is defined in `tailwind.config.js`:
+
 - **Primary**: Deep Purple (#5B2C6F)
 - **Accent**: Golden Yellow (#F1C40F)
 
 ### Content
 
 Update personal information in the respective component files:
+
 - `src/components/Hero.tsx` - Hero section content
 - `src/components/About.tsx` - About section content
 - `src/components/Skills.tsx` - Skills and technologies
@@ -143,6 +156,7 @@ Update personal information in the respective component files:
 ### Fonts
 
 The website uses:
+
 - **Body text**: EB Garamond (serif)
 - **Headings**: Inter (sans-serif)
 

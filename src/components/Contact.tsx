@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Mail, Phone, Linkedin, Github, MapPin, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Mail, Phone, Linkedin, Github, MapPin, Send } from "lucide-react";
 
 const Contact: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -23,10 +23,12 @@ const Contact: React.FC = () => {
     window.location.href = mailtoLink;
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -35,36 +37,39 @@ const Contact: React.FC = () => {
       icon: Phone,
       label: "Phone",
       value: "+977 9867665905",
-      href: "tel:+9779867665905"
+      href: "tel:+9779867665905",
     },
     {
       icon: Mail,
       label: "Email",
       value: "bsaladkari@gmail.com",
-      href: "mailto:bsaladkari@gmail.com"
+      href: "mailto:bsaladkari@gmail.com",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Connect with me",
-      href: "https://www.linkedin.com/in/bishal-adhikari-051a09296/"
+      href: "https://www.linkedin.com/in/bishal-adhikari-051a09296/",
     },
     {
       icon: Github,
       label: "GitHub",
       value: "View my code",
-      href: "https://github.com/BishalAdhikari0123"
+      href: "https://github.com/BishalAdhikari0123",
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Pokhara, Nepal",
-      href: null
-    }
+      href: null,
+    },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -74,11 +79,15 @@ const Contact: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Get In <span className="bg-gradient-to-r from-accent-600 to-secondary-600 bg-clip-text text-transparent">Touch</span>
+            Get In{" "}
+            <span className="bg-gradient-to-r from-accent-600 to-secondary-600 bg-clip-text text-transparent">
+              Touch
+            </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent-600 to-secondary-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Let's discuss your next project or potential collaboration opportunities
+            Let's discuss your next project or potential collaboration
+            opportunities
           </p>
         </motion.div>
 
@@ -91,7 +100,9 @@ const Contact: React.FC = () => {
             className="space-y-6"
           >
             <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 font-display">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 font-display">
+                Contact Information
+              </h3>
               <div className="space-y-4">
                 {contactInfo.map((item, index) => (
                   <motion.div
@@ -105,12 +116,20 @@ const Contact: React.FC = () => {
                       <item.icon className="text-white" size={20} />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-500">{item.label}</p>
+                      <p className="text-sm font-medium text-gray-500">
+                        {item.label}
+                      </p>
                       {item.href ? (
                         <a
                           href={item.href}
-                          target={item.href.startsWith('http') ? '_blank' : undefined}
-                          rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          target={
+                            item.href.startsWith("http") ? "_blank" : undefined
+                          }
+                          rel={
+                            item.href.startsWith("http")
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
                           className="text-gray-900 hover:text-accent-600 transition-colors duration-200"
                         >
                           {item.value}
@@ -130,10 +149,13 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-8"
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">Let's Collaborate</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 font-display">
+                Let's Collaborate
+              </h3>
               <p className="text-gray-600 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects, 
-                or just having a chat about technology and development. Feel free to reach out!
+                I'm always open to discussing new opportunities, interesting
+                projects, or just having a chat about technology and
+                development. Feel free to reach out!
               </p>
             </motion.div>
           </motion.div>
@@ -145,10 +167,15 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-8"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 font-display">Send a Message</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 font-display">
+              Send a Message
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Full Name
                 </label>
                 <input
@@ -164,7 +191,10 @@ const Contact: React.FC = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Email Address
                 </label>
                 <input
@@ -180,7 +210,10 @@ const Contact: React.FC = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Message
                 </label>
                 <textarea

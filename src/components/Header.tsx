@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X, Download } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X, Download } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,20 +10,20 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
@@ -32,9 +32,9 @@ const Header: React.FC = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/80 backdrop-blur-xl shadow-xl border-b border-gray-200/50' 
-          : 'bg-transparent'
+        isScrolled
+          ? "bg-white/80 backdrop-blur-xl shadow-xl border-b border-gray-200/50"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

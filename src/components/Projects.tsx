@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Github, ExternalLink, Code } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Github, ExternalLink, Code } from "lucide-react";
 
 const Projects: React.FC = () => {
   const ref = useRef(null);
@@ -11,40 +11,48 @@ const Projects: React.FC = () => {
   const projects = [
     {
       title: "LevelUp – Skill Based Community App",
-      description: "A comprehensive community platform that connects users based on their skills and interests. Features user authentication, skill matching, community forums, and real-time messaging.",
-      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description:
+        "A comprehensive community platform that connects users based on their skills and interests. Features user authentication, skill matching, community forums, and real-time messaging.",
+      image:
+        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
       techStack: ["Next.js", "Node.js", "Prisma", "PostgreSQL"],
       github: "https://github.com/BishalAdhikari0123/LevelUp",
       live: "https://level-up-olive-gamma.vercel.app/eng/home",
-      featured: true
+      featured: true,
     },
     {
       title: "Group Chat API",
-      description: "A robust real-time chat API built with Node.js and Express, featuring WebSocket connections, user authentication, message persistence, and group management capabilities.",
-      image: "https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description:
+        "A robust real-time chat API built with Node.js and Express, featuring WebSocket connections, user authentication, message persistence, and group management capabilities.",
+      image:
+        "https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&w=800",
       techStack: ["Node.js", "Express", "MongoDB"],
       github: "https://github.com/BishalAdhikari0123/Group-Chat",
       live: null,
-      featured: false
+      featured: false,
     },
     {
       title: "Bookly – E-commerce for Digital Books",
-      description: "A full-featured e-commerce platform specialized for digital book sales. Includes user management, payment processing, digital delivery, and comprehensive admin dashboard.",
-      image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description:
+        "A full-featured e-commerce platform specialized for digital book sales. Includes user management, payment processing, digital delivery, and comprehensive admin dashboard.",
+      image:
+        "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800",
       techStack: ["PHP", "MySQL"],
       github: "https://github.com/lgic-project/BookComSystem",
       live: null,
-      featured: false
+      featured: false,
     },
     {
       title: "TopCollec – Fantasy Blog",
-      description: "A creative fantasy blog platform featuring rich content management, responsive design, and optimized for SEO. Built with modern WordPress techniques and custom themes.",
-      image: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description:
+        "A creative fantasy blog platform featuring rich content management, responsive design, and optimized for SEO. Built with modern WordPress techniques and custom themes.",
+      image:
+        "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800",
       techStack: ["WordPress"],
       github: null,
       live: "https://topcollec.wordpress.com",
-      featured: false
-    }
+      featured: false,
+    },
   ];
 
   return (
@@ -58,11 +66,15 @@ const Projects: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Featured <span className="bg-gradient-to-r from-accent-600 to-secondary-600 bg-clip-text text-transparent">Projects</span>
+            Featured{" "}
+            <span className="bg-gradient-to-r from-accent-600 to-secondary-600 bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent-600 to-secondary-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A showcase of my backend development expertise and full-stack capabilities
+            A showcase of my backend development expertise and full-stack
+            capabilities
           </p>
         </motion.div>
 
@@ -74,10 +86,14 @@ const Projects: React.FC = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 ${
-                project.featured ? 'border-2 border-accent-200 ring-2 ring-accent-100' : 'border border-gray-200'
+                project.featured
+                  ? "border-2 border-accent-200 ring-2 ring-accent-100"
+                  : "border border-gray-200"
               }`}
             >
-              <div className={`grid ${project.featured ? 'lg:grid-cols-2' : 'md:grid-cols-3'} gap-0`}>
+              <div
+                className={`grid ${project.featured ? "lg:grid-cols-2" : "md:grid-cols-3"} gap-0`}
+              >
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
@@ -93,11 +109,17 @@ const Projects: React.FC = () => {
                   )}
                 </div>
 
-                <div className={`p-6 ${project.featured ? '' : 'md:col-span-2'} flex flex-col justify-between`}>
+                <div
+                  className={`p-6 ${project.featured ? "" : "md:col-span-2"} flex flex-col justify-between`}
+                >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 font-display">{project.title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">{project.description}</p>
-                    
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 font-display">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.techStack.map((tech) => (
                         <span
@@ -152,7 +174,9 @@ const Projects: React.FC = () => {
         >
           <div className="inline-flex items-center px-6 py-3 bg-white rounded-2xl border border-gray-200 shadow-lg">
             <Code className="text-accent-600 mr-3" size={24} />
-            <span className="text-gray-700 font-medium">More projects available on my GitHub</span>
+            <span className="text-gray-700 font-medium">
+              More projects available on my GitHub
+            </span>
           </div>
         </motion.div>
       </div>
