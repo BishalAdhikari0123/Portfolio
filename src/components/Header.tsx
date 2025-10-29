@@ -62,6 +62,8 @@ const Header: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="/bishal_adhikari_cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-accent-600 to-secondary-600 text-white rounded-xl hover:shadow-lg hover:shadow-accent-500/25 transition-all duration-200 font-medium"
             >
               <Download size={16} className="mr-2" />
