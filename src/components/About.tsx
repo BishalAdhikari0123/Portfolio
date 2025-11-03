@@ -98,17 +98,29 @@ const About: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl border border-gray-100 hover:border-accent-200 transition-all duration-300 group"
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 hover:border-accent-300 transition-all duration-300 group cursor-pointer relative overflow-hidden"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-accent-600 to-secondary-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <item.icon className="text-white" size={24} />
+                {/* Gradient overlay on hover */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-accent-50 to-secondary-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  initial={false}
+                />
+                <div className="relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                    className="w-12 h-12 bg-gradient-to-br from-accent-600 to-secondary-600 rounded-xl flex items-center justify-center mb-4 shadow-lg"
+                  >
+                    <item.icon className="text-white" size={24} />
+                  </motion.div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-accent-700 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.description}
-                </p>
               </motion.div>
             ))}
           </motion.div>

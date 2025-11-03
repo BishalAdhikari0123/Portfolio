@@ -85,10 +85,11 @@ const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 ${
+              whileHover={{ y: -5 }}
+              className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group ${
                 project.featured
                   ? "border-2 border-accent-200 ring-2 ring-accent-100"
-                  : "border border-gray-200"
+                  : "border border-gray-200 hover:border-accent-200"
               }`}
             >
               <div

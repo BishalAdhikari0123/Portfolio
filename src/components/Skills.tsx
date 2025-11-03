@@ -94,13 +94,18 @@ const Skills: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl border border-gray-100 hover:border-gray-200 transition-all duration-300 group"
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl border border-gray-100 hover:border-gray-300 transition-all duration-300 group"
             >
-              <div
-                className={`h-1 bg-gradient-to-r ${category.color} group-hover:h-2 transition-all duration-300`}
-              ></div>
+              <motion.div
+                className={`h-1 bg-gradient-to-r ${category.color}`}
+                initial={{ scaleX: 0 }}
+                animate={isInView ? { scaleX: 1 } : {}}
+                transition={{ duration: 0.8, delay: categoryIndex * 0.1 + 0.3 }}
+                style={{ transformOrigin: "left" }}
+              />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 font-display">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 font-display group-hover:text-accent-700 transition-colors duration-300">
                   {category.title}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -113,7 +118,9 @@ const Skills: React.FC = () => {
                         duration: 0.4,
                         delay: categoryIndex * 0.1 + skillIndex * 0.05,
                       }}
-                      className="px-3 py-1.5 bg-gray-50 text-gray-700 text-sm rounded-full border border-gray-200 hover:border-accent-300 hover:bg-accent-50 hover:text-accent-700 transition-all duration-200 font-mono text-xs"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-3 py-1.5 bg-gray-50 text-gray-700 text-sm rounded-full border border-gray-200 hover:border-accent-400 hover:bg-accent-50 hover:text-accent-700 hover:shadow-md transition-all duration-200 font-mono text-xs cursor-pointer"
                     >
                       {skill}
                     </motion.span>

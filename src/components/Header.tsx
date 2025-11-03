@@ -55,7 +55,12 @@ const Header: React.FC = () => {
                 className="text-gray-700 hover:text-accent-600 transition-all duration-200 font-medium relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-accent-600 to-secondary-600 transition-all duration-200 group-hover:w-full"></span>
+                <motion.span
+                  className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-accent-600 to-secondary-600"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.3 }}
+                />
               </button>
             ))}
             <motion.a
