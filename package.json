@@ -3,16 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://bishaladhikari1.com.np",
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "typecheck": "tsc --noEmit -p tsconfig.app.json",
-  "predeploy": "pnpm build",
-  "deploy": "gh-pages -d dist"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
     "framer-motion": "^12.23.22",
