@@ -16,8 +16,10 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -31,36 +33,29 @@ const Header: React.FC = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-xl border-b border-gray-200/50"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+          ? "glass-bw-strong shadow-2xl shadow-white/5 border-b border-white/10"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-to-r from-accent-600 to-secondary-600 bg-clip-text text-transparent font-display"
+            className="text-2xl font-bold text-white"
           >
             BA
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-accent-600 transition-all duration-200 font-medium relative group"
+                className="text-gray-300 hover:text-white transition-all duration-200 font-medium relative group underline-animate"
               >
                 {item.name}
-                <motion.span
-                  className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-accent-600 to-secondary-600"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3 }}
-                />
               </button>
             ))}
             <motion.a
@@ -69,7 +64,7 @@ const Header: React.FC = () => {
               href="/bishal_adhikari_cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-accent-600 to-secondary-600 text-white rounded-xl hover:shadow-lg hover:shadow-accent-500/25 transition-all duration-200 font-medium"
+              className="inline-flex items-center px-6 py-2.5 bg-white text-black rounded-xl font-medium hover:bg-gray-200 transition-all duration-200"
             >
               <Download size={16} className="mr-2" />
               Resume
@@ -79,7 +74,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-white hover:text-gray-300 transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -97,15 +92,17 @@ const Header: React.FC = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left px-4 py-2 text-gray-700 hover:text-accent-600 hover:bg-gray-50 rounded-lg transition-all duration-200"
+                  className="text-left px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
                 >
                   {item.name}
                 </button>
               ))}
               <motion.a
                 whileTap={{ scale: 0.95 }}
-                href="#"
-                className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-accent-600 to-secondary-600 text-white rounded-xl hover:shadow-lg hover:shadow-accent-500/25 transition-all duration-200 font-medium w-fit"
+                href="/bishal_adhikari_cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-2.5 bg-white text-black rounded-xl font-medium w-fit hover:bg-gray-200 transition-all duration-200"
               >
                 <Download size={16} className="mr-2" />
                 Resume
