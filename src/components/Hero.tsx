@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-white rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
               <div className="absolute inset-1 bg-black rounded-full"></div>
               <img
-                src="/profile.jpg"
+                src="/profile.webp"
                 alt="Bishal Adhikari"
                 width={600}
                 height={600}
