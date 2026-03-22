@@ -7,6 +7,7 @@ import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Skills />
         <Projects />
         <Education />
+        <PrivacyPolicy />
         <Contact />
       </main>
 
