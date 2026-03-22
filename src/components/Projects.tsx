@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
       description:
         "Full-stack zombie survival game combining frontend and backend repos. TypeScript-based Next.js frontend with Express backend, PostgreSQL database, and JWT authentication. Features multiplayer combat, leaderboard system, and real-time game updates via WebSocket. Backend architecture follows microservices and modular design.",
       image:
-        "https://images.pexels.com/photos/371924/pexels-photo-371924.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/371924/pexels-photo-371924.jpeg?auto=compress&cs=tinysrgb&w=600",
       techStack: ["TypeScript", "Next.js", "Express", "PostgreSQL", "WebSocket", "JWT"],
       github: "https://github.com/BishalAdhikari0123/zombie-survival",
       live: "https://zombie-survival-zeta.vercel.app/",
@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
       description:
         "Full-stack platform for skill learning and participation-based leveling with gamification. Backend: Node.js, Express, Prisma ORM, PostgreSQL. Frontend: Next.js web app and React Native client. Includes real-time chat, user dashboards, and role-based access. Currently under development.",
       image:
-        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600",
       techStack: ["Next.js", "Node.js", "Express", "Prisma", "PostgreSQL", "React Native"],
       github: "https://github.com/BishalAdhikari0123/LevelUp",
       live: "https://level-up-olive-gamma.vercel.app/eng/home",
@@ -38,7 +38,7 @@ const Projects: React.FC = () => {
       description:
         "Next.js and Supabase system that generates personalized news using AI. Implements authentication, content feed, and image storage. Features intelligent content curation and user personalization.",
       image:
-        "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=600",
       techStack: ["Next.js", "Supabase", "AI/ML", "TypeScript"],
       github: null,
       live: "https://joke-patra-ai-powered-news-portal.vercel.app/",
@@ -50,7 +50,7 @@ const Projects: React.FC = () => {
       description:
         "Next.js blogging platform with CRUD posts, PostgreSQL backend, and role-based access. Features modern content management, responsive design, and optimized performance. Currently in progress.",
       image:
-        "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=600",
       techStack: ["Next.js", "PostgreSQL", "TypeScript"],
       github: null,
       live: "https://top-collec-full-stack.vercel.app/",
@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
       description:
         "Multiplayer cooking raid platform with TypeScript Express backend and Next.js PWA frontend. Implements 30+ REST endpoints for raid-system, leaderboard, authentication, and photo uploads. PostgreSQL relational schema (16 tables) with Supabase storage and JWT authentication. Production-ready backend architecture with 7,700+ LOC.",
       image:
-        "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600",
       techStack: ["TypeScript", "Express", "Next.js", "PostgreSQL", "Supabase", "JWT"],
       github: "https://github.com/BishalAdhikari0123/RecipeRaid",
       live: null,
@@ -86,7 +86,7 @@ const Projects: React.FC = () => {
       description:
         "PHP + MySQL system for buying, reading, and managing digital books. Includes admin dashboard for content management, user authentication, and digital book delivery system.",
       image:
-        "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600",
       techStack: ["PHP", "MySQL"],
       github: "https://github.com/lgic-project/BookComSystem",
       live: null,
@@ -137,6 +137,7 @@ const Projects: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-64 md:h-full object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>

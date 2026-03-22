@@ -46,6 +46,8 @@ const Hero: React.FC = () => {
               <img
                 src="/profile.jpg"
                 alt="Bishal Adhikari"
+                width={600}
+                height={600}
                 className="absolute inset-2 w-[calc(100%-1rem)] h-[calc(100%-1rem)] object-cover rounded-full transition-all duration-500"
               />
             </motion.div>
@@ -122,13 +124,13 @@ const Hero: React.FC = () => {
           >
             <a
               href="#projects"
-              className="px-8 py-4 bg-white text-black font-semibold rounded-xl hover:bg-gray-200 transition-all duration-300 hover-scale"
+              className="px-8 py-4 bg-white text-black font-semibold rounded-xl hover:bg-gray-200 hover-scale"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              className="px-8 py-4 glass-bw text-white font-semibold rounded-xl border-2 border-white/20 hover:border-white/60 hover:glass-bw-strong transition-all duration-300"
+              className="px-8 py-4 glass-bw text-white font-semibold rounded-xl border-2 border-white/20 hover:border-white/60 hover-scale"
             >
               Get In Touch
             </a>
