@@ -14,13 +14,35 @@ const Contact: React.FC = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    const subject = `Portfolio Contact from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:bsaladkari@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    setStatus("loading");
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Something went wrong";
+      setErrorMessage(message);
+      setStatus("error");
+    }
   };
 
   const handleInputChange = (
@@ -237,6 +259,17 @@ const Contact: React.FC = () => {
                 <Send size={18} />
                 <span>Send Message</span>
               </motion.button>
+
+              {status === "success" && (
+                <p className="text-sm text-green-400">
+                  Your message has been sent successfully.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-red-400">
+                  {errorMessage || "Failed to send message. Please try again."}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
