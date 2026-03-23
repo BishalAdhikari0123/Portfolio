@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { createPost } from "../lib/blogApi";
 
 const ManualPostPage: React.FC = () => {
+  const MAX_IMAGE_SIZE_BYTES = 2 * 1024 * 1024;
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -49,6 +50,10 @@ const ManualPostPage: React.FC = () => {
       let imageMimeType: string | undefined;
 
       if (imageFile) {
+        if (imageFile.size > MAX_IMAGE_SIZE_BYTES) {
+          throw new Error("Cover image is too large. Please use an image smaller than 2MB.");
+        }
+
         imageBase64 = await fileToBase64(imageFile);
         imageMimeType = imageFile.type;
       }
