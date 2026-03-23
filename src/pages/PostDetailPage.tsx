@@ -1,9 +1,13 @@
 import { Link, useParams } from "react-router-dom";
-import { blogPosts } from "../data/posts";
+import { blogPosts } from "../data/posts.ts";
 
 const PostDetailPage: React.FC = () => {
   const { slug } = useParams();
   const post = blogPosts.find((item) => item.slug === slug);
+  const relatedPosts = blogPosts
+    .filter((item) => item.slug !== slug)
+    .filter((item) => item.category === post?.category)
+    .slice(0, 3);
 
   if (!post) {
     return (
@@ -67,6 +71,29 @@ const PostDetailPage: React.FC = () => {
                 <li key={takeaway}>{takeaway}</li>
               ))}
             </ul>
+          </section>
+
+          <section className="glass-bw rounded-2xl p-7 border border-white/20">
+            <h2 className="text-2xl font-bold text-white mb-3">Continue reading</h2>
+            <div className="grid md:grid-cols-2 gap-3 mb-4">
+              {relatedPosts.map((relatedPost) => (
+                <Link
+                  key={relatedPost.slug}
+                  to={`/posts/${relatedPost.slug}`}
+                  className="p-4 rounded-xl border border-white/20 text-gray-200 hover:bg-white/10 transition-colors"
+                >
+                  {relatedPost.title}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/tutorials" className="px-4 py-2 rounded-lg bg-white text-black font-medium">
+                Browse tutorials
+              </Link>
+              <Link to="/projects" className="px-4 py-2 rounded-lg border border-white/30 text-white hover:bg-white/10 transition-colors font-medium">
+                View project case studies
+              </Link>
+            </div>
           </section>
         </div>
       </article>

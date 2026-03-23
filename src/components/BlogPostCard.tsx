@@ -8,6 +8,9 @@ type BlogPostCardProps = {
 const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
   return (
     <article className="glass-bw rounded-2xl border border-white/15 p-6 hover:glass-bw-strong hover:border-white/35 transition-all duration-300">
+      <span className="inline-block mb-2 px-2.5 py-1 rounded-md text-xs uppercase tracking-wide bg-white text-black font-semibold">
+        {post.category}
+      </span>
       <p className="text-sm text-gray-400 mb-2">
         {new Date(post.publishedAt).toLocaleDateString()} · {post.readTime}
       </p>

@@ -23,6 +23,18 @@ const SiteFooter: React.FC = () => {
               Contact
             </Link>
             <Link
+              to="/posts"
+              className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
+            >
+              Blog
+            </Link>
+            <Link
+              to="/tutorials"
+              className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
+            >
+              Tutorials
+            </Link>
+            <Link
               to="/privacy-policy"
               className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
             >

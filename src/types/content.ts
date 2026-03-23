@@ -24,6 +24,7 @@ export type PostSection = {
 
 export type BlogPost = {
   slug: string;
+  category: "blog" | "tutorial";
   title: string;
   excerpt: string;
   publishedAt: string;

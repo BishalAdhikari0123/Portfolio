@@ -7,17 +7,70 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ProjectCaseStudyPage from "./pages/ProjectCaseStudyPage";
 import PostsPage from "./pages/PostsPage";
 import PostDetailPage from "./pages/PostDetailPage";
+import TutorialsPage from "./pages/TutorialsPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import TermsPage from "./pages/TermsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { blogPosts } from "./data/posts.ts";
+import { projectCaseStudies } from "./data/projects";
 
 function App() {
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const defaultTitle = "Bishal Adhikari | Tech Blog + Portfolio";
+    const defaultDescription =
+      "Technical tutorials, project case studies, and backend/full-stack engineering notes by Bishal Adhikari.";
+
+    let title = defaultTitle;
+    let description = defaultDescription;
+
+    if (location.pathname === "/") {
+      title = "Home | Bishal Adhikari";
+      description =
+        "Tech blog + portfolio featuring development tutorials, case studies, and practical engineering insights.";
+    } else if (location.pathname === "/posts") {
+      title = "Blog | Bishal Adhikari";
+      description =
+        "Read in-depth software engineering articles on React, Next.js, Node.js, deployment, and backend architecture.";
+    } else if (location.pathname === "/tutorials") {
+      title = "Tutorials | Bishal Adhikari";
+      description =
+        "Step-by-step tutorials for full-stack developers: React, TypeScript, Supabase, Next.js, and APIs.";
+    } else if (location.pathname === "/projects") {
+      title = "Projects | Bishal Adhikari";
+      description =
+        "Explore project case studies with problem statements, solutions, tech stack, challenges, and screenshots.";
+    } else if (location.pathname === "/contact") {
+      title = "Contact | Bishal Adhikari";
+      description = "Get in touch with Bishal Adhikari for collaboration, freelance projects, or backend development work.";
+    } else if (location.pathname.startsWith("/posts/")) {
+      const slug = location.pathname.replace("/posts/", "");
+      const post = blogPosts.find((item) => item.slug === slug);
+      if (post) {
+        title = `${post.title} | Bishal Adhikari`;
+        description = post.excerpt;
+      }
+    } else if (location.pathname.startsWith("/projects/")) {
+      const slug = location.pathname.replace("/projects/", "");
+      const project = projectCaseStudies.find((item) => item.slug === slug);
+      if (project) {
+        title = `${project.title} | Project Case Study`;
+        description = project.summary;
+      }
+    }
+
+    document.title = title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", description);
+    }
   }, [location.pathname]);
 
   useEffect(() => {
@@ -54,6 +107,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:slug" element={<ProjectCaseStudyPage />} />
           <Route path="/posts" element={<PostsPage />} />
+          <Route path="/tutorials" element={<TutorialsPage />} />
           <Route path="/posts/:slug" element={<PostDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
