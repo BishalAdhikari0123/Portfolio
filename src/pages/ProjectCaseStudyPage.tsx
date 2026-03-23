@@ -1,9 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import { projectCaseStudies } from "../data/projects";
+import { blogPosts } from "../data/posts.ts";
 
 const ProjectCaseStudyPage: React.FC = () => {
   const { slug } = useParams();
   const project = projectCaseStudies.find((item) => item.slug === slug);
+  const relatedBlogPosts = blogPosts.filter((post) => post.category === "blog").slice(0, 3);
 
   if (!project) {
     return (
@@ -107,6 +109,32 @@ const ProjectCaseStudyPage: React.FC = () => {
             </a>
           )}
         </div>
+
+        <section className="mt-10 glass-bw rounded-2xl p-7 border border-white/20">
+          <h2 className="text-2xl font-bold text-white mb-3">Related blog reading</h2>
+          <p className="text-gray-300 mb-5 leading-relaxed">
+            If you enjoyed this case study, these technical articles explain the backend and architecture patterns behind projects like this.
+          </p>
+          <div className="grid md:grid-cols-2 gap-3 mb-4">
+            {relatedBlogPosts.map((post) => (
+              <Link
+                key={post.slug}
+                to={`/posts/${post.slug}`}
+                className="p-4 rounded-xl border border-white/20 text-gray-200 hover:bg-white/10 transition-colors"
+              >
+                {post.title}
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/blog" className="px-4 py-2 rounded-lg bg-white text-black font-medium">
+              Explore all blog posts
+            </Link>
+            <Link to="/tutorials" className="px-4 py-2 rounded-lg border border-white/30 text-white hover:bg-white/10 transition-colors font-medium">
+              Explore tutorials
+            </Link>
+          </div>
+        </section>
       </article>
     </section>
   );

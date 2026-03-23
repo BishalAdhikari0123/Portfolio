@@ -17,7 +17,7 @@ const PostsPage: React.FC = () => {
           </p>
           <div className="flex items-center justify-center gap-3 mt-6 flex-wrap">
             <Link
-              to="/posts"
+              to="/blog"
               className="px-4 py-2 bg-white text-black rounded-lg font-medium"
             >
               Blog

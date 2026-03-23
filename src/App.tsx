@@ -35,7 +35,7 @@ function App() {
       title = "Home | Bishal Adhikari";
       description =
         "Tech blog + portfolio featuring development tutorials, case studies, and practical engineering insights.";
-    } else if (location.pathname === "/posts") {
+    } else if (location.pathname === "/posts" || location.pathname === "/blog") {
       title = "Blog | Bishal Adhikari";
       description =
         "Read in-depth software engineering articles on React, Next.js, Node.js, deployment, and backend architecture.";
@@ -106,6 +106,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:slug" element={<ProjectCaseStudyPage />} />
+          <Route path="/blog" element={<PostsPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/tutorials" element={<TutorialsPage />} />
           <Route path="/posts/:slug" element={<PostDetailPage />} />

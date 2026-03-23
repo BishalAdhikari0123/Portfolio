@@ -1,5 +1,6 @@
 import CaseStudyCard from "../components/CaseStudyCard";
 import { projectCaseStudies } from "../data/projects";
+import { Link } from "react-router-dom";
 
 const ProjectsPage: React.FC = () => {
   return (
@@ -18,6 +19,20 @@ const ProjectsPage: React.FC = () => {
           {projectCaseStudies.map((project) => (
             <CaseStudyCard key={project.slug} project={project} />
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <p className="text-gray-400 mb-4">
+            Looking for implementation details behind these case studies?
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link to="/blog" className="px-5 py-2.5 bg-white text-black rounded-xl font-medium hover:bg-gray-200 transition-colors">
+              Read blog articles
+            </Link>
+            <Link to="/tutorials" className="px-5 py-2.5 border border-white/30 text-white rounded-xl font-medium hover:bg-white/10 transition-colors">
+              Read tutorials
+            </Link>
+          </div>
         </div>
       </div>
     </section>

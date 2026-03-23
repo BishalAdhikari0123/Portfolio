@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
 
           <div className="text-center mt-10">
             <Link
-              to="/posts"
+              to="/blog"
               className="inline-flex items-center px-7 py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-200"
             >
               Read all posts
