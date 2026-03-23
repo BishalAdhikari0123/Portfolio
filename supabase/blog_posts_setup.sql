@@ -59,3 +59,6 @@ insert into storage.buckets (id, name, public)
 values ('blog-images', 'blog-images', true)
 on conflict (id) do update
 set public = excluded.public;
+
+-- Force PostgREST schema cache refresh (helps resolve PGRST205 immediately).
+select pg_notify('pgrst', 'reload schema');

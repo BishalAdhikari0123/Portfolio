@@ -64,6 +64,10 @@ function extFromMime(mime) {
   return 'bin';
 }
 
+function isMissingBlogTableError(error) {
+  return Boolean(error && error.code === 'PGRST205');
+}
+
 function getSupabaseAdmin() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SECRET_KEY;
@@ -129,6 +133,12 @@ app.get('/api/posts', async (req, res) => {
 
     if (error) {
       console.error(error);
+      if (isMissingBlogTableError(error)) {
+        return res.status(500).json({
+          error: 'Supabase blog table is missing',
+          details: "Run supabase/blog_posts_setup.sql in your Supabase SQL editor.",
+        });
+      }
       return res.status(500).json({ error: 'Failed to fetch posts' });
     }
 
@@ -167,6 +177,13 @@ app.get('/api/posts/:slug', async (req, res) => {
       .eq('slug', slug)
       .eq('is_published', true)
       .single();
+
+    if (isMissingBlogTableError(error)) {
+      return res.status(500).json({
+        error: 'Supabase blog table is missing',
+        details: "Run supabase/blog_posts_setup.sql in your Supabase SQL editor.",
+      });
+    }
 
     if (error || !data) {
       return res.status(404).json({ error: 'Post not found' });
@@ -291,6 +308,12 @@ app.post('/api/posts', async (req, res) => {
 
     if (insertError) {
       console.error(insertError);
+      if (isMissingBlogTableError(insertError)) {
+        return res.status(500).json({
+          error: 'Supabase blog table is missing',
+          details: "Run supabase/blog_posts_setup.sql in your Supabase SQL editor.",
+        });
+      }
       if (insertError.code === '23505') {
         return res.status(409).json({ error: 'Slug already exists' });
       }

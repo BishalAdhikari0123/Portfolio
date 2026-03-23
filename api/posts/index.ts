@@ -67,6 +67,20 @@ function extFromMime(mime: string): string {
   return "bin";
 }
 
+function getErrorCode(error: unknown): string | undefined {
+  if (error && typeof error === "object" && "code" in error) {
+    const code = (error as { code?: unknown }).code;
+    if (typeof code === "string") {
+      return code;
+    }
+  }
+  return undefined;
+}
+
+function isMissingBlogTableError(error: unknown): error is { code: string } {
+  return getErrorCode(error) === "PGRST205";
+}
+
 export default async function handler(req: Req, res: Res) {
   try {
     if (req.method !== "GET" && req.method !== "POST") {
@@ -97,6 +111,12 @@ export default async function handler(req: Req, res: Res) {
 
       if (error) {
         console.error(error);
+        if (isMissingBlogTableError(error)) {
+          return res.status(500).json({
+            error: "Supabase blog table is missing",
+            details: "Run supabase/blog_posts_setup.sql in your Supabase SQL editor.",
+          });
+        }
         return res.status(500).json({ error: "Failed to fetch posts" });
       }
 
@@ -213,7 +233,13 @@ export default async function handler(req: Req, res: Res) {
 
       if (insertError) {
         console.error(insertError);
-        if (insertError.code === "23505") {
+        if (isMissingBlogTableError(insertError)) {
+          return res.status(500).json({
+            error: "Supabase blog table is missing",
+            details: "Run supabase/blog_posts_setup.sql in your Supabase SQL editor.",
+          });
+        }
+        if (getErrorCode(insertError) === "23505") {
           return res.status(409).json({ error: "Slug already exists" });
         }
         return res.status(500).json({ error: "Failed to create post" });
