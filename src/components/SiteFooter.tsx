@@ -11,16 +11,28 @@ const SiteFooter: React.FC = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm">
             <Link
-              to="/projects"
+              to="/about"
               className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
             >
-              Case Studies
+              About
             </Link>
             <Link
-              to="/posts"
+              to="/contact"
               className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
             >
-              Posts
+              Contact
+            </Link>
+            <Link
+              to="/privacy-policy"
+              className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
+            >
+              Terms & Conditions
             </Link>
             <a
               href="https://github.com/BishalAdhikari0123"

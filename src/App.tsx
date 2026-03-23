@@ -8,6 +8,9 @@ import ProjectCaseStudyPage from "./pages/ProjectCaseStudyPage";
 import PostsPage from "./pages/PostsPage";
 import PostDetailPage from "./pages/PostDetailPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import TermsPage from "./pages/TermsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
@@ -52,7 +55,10 @@ function App() {
           <Route path="/projects/:slug" element={<ProjectCaseStudyPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/posts/:slug" element={<PostDetailPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
