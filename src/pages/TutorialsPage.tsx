@@ -1,8 +1,26 @@
+import { useEffect, useState } from "react";
 import BlogPostCard from "../components/BlogPostCard";
-import { blogPosts } from "../data/posts.ts";
+import { BlogPost } from "../types/content";
+import { fetchPosts } from "../lib/blogApi";
 
 const TutorialsPage: React.FC = () => {
-  const tutorials = blogPosts.filter((post) => post.category === "tutorial");
+  const [tutorials, setTutorials] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadTutorials = async () => {
+      try {
+        const data = await fetchPosts("tutorial");
+        setTutorials(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadTutorials();
+  }, []);
 
   return (
     <section className="py-20 bg-black relative overflow-hidden min-h-[70vh]">
@@ -16,11 +34,15 @@ const TutorialsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {tutorials.map((post) => (
-            <BlogPostCard key={post.slug} post={post} />
-          ))}
-        </div>
+        {isLoading ? (
+          <p className="text-center text-gray-400">Loading tutorials...</p>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tutorials.map((post) => (
+              <BlogPostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

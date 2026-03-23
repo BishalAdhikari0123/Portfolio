@@ -1,13 +1,54 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { blogPosts } from "../data/posts.ts";
+import { BlogPost } from "../types/content";
+import { fetchPostBySlug, fetchPosts } from "../lib/blogApi";
 
 const PostDetailPage: React.FC = () => {
   const { slug } = useParams();
-  const post = blogPosts.find((item) => item.slug === slug);
-  const relatedPosts = blogPosts
-    .filter((item) => item.slug !== slug)
-    .filter((item) => item.category === post?.category)
-    .slice(0, 3);
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPost = async () => {
+      if (!slug) {
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        const loadedPost = await fetchPostBySlug(slug);
+        setPost(loadedPost);
+
+        if (loadedPost?.category) {
+          const related = await fetchPosts(loadedPost.category);
+          setRelatedPosts(related.filter((item) => item.slug !== slug).slice(0, 3));
+
+          document.title = `${loadedPost.title} | Bishal Adhikari`;
+          const metaDescription = document.querySelector('meta[name="description"]');
+          if (metaDescription) {
+            metaDescription.setAttribute("content", loadedPost.excerpt);
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadPost();
+  }, [slug]);
+
+  if (isLoading) {
+    return (
+      <section className="py-20 min-h-[65vh] bg-black text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-400">Loading post...</p>
+        </div>
+      </section>
+    );
+  }
 
   if (!post) {
     return (

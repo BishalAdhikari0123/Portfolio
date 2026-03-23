@@ -62,6 +62,35 @@ npm run build
 - `npm run lint` - Run ESLint
 - `npm run typecheck` - Run TypeScript type checking
 
+## 🗄️ Supabase Blog Setup
+
+Posts are now sourced from Supabase (database for posts only), and manual publishing is available at `/blog/new`.
+
+### Required environment variables
+
+Set these in `.env` locally and in your hosting environment:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `BLOG_POSTER_ID`
+
+### Database and storage setup
+
+Run `supabase/blog_posts_setup.sql` in Supabase SQL Editor. It creates:
+
+- `public.blog_posts` table
+- indexes + `updated_at` trigger
+- a read policy for published posts
+- `blog-images` public storage bucket for optional cover images
+
+### Manual publish workflow
+
+1. Visit `/blog/new`.
+2. Enter the private poster ID (`BLOG_POSTER_ID`).
+3. Fill post fields and optionally attach an image.
+4. Publish and get redirected to `/posts/:slug`.
+
 ## 📦 Deployment
 
 ### GitHub Pages

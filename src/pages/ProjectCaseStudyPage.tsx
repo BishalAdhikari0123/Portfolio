@@ -1,11 +1,26 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { projectCaseStudies } from "../data/projects";
-import { blogPosts } from "../data/posts.ts";
+import { BlogPost } from "../types/content";
+import { fetchPosts } from "../lib/blogApi";
 
 const ProjectCaseStudyPage: React.FC = () => {
   const { slug } = useParams();
   const project = projectCaseStudies.find((item) => item.slug === slug);
-  const relatedBlogPosts = blogPosts.filter((post) => post.category === "blog").slice(0, 3);
+  const [relatedBlogPosts, setRelatedBlogPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    const loadRelated = async () => {
+      try {
+        const posts = await fetchPosts("blog");
+        setRelatedBlogPosts(posts.slice(0, 3));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    loadRelated();
+  }, []);
 
   if (!project) {
     return (

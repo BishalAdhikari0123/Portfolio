@@ -13,7 +13,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import TermsPage from "./pages/TermsPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import { blogPosts } from "./data/posts.ts";
+import ManualPostPage from "./pages/ManualPostPage";
 import { projectCaseStudies } from "./data/projects";
 
 function App() {
@@ -50,13 +50,12 @@ function App() {
     } else if (location.pathname === "/contact") {
       title = "Contact | Bishal Adhikari";
       description = "Get in touch with Bishal Adhikari for collaboration, freelance projects, or backend development work.";
+    } else if (location.pathname === "/blog/new") {
+      title = "Publish Blog Post | Bishal Adhikari";
+      description = "Secure manual publishing page for adding blog posts and optional cover images.";
     } else if (location.pathname.startsWith("/posts/")) {
-      const slug = location.pathname.replace("/posts/", "");
-      const post = blogPosts.find((item) => item.slug === slug);
-      if (post) {
-        title = `${post.title} | Bishal Adhikari`;
-        description = post.excerpt;
-      }
+      title = "Blog Post | Bishal Adhikari";
+      description = "Read practical software engineering notes, tutorials, and backend development guides.";
     } else if (location.pathname.startsWith("/projects/")) {
       const slug = location.pathname.replace("/projects/", "");
       const project = projectCaseStudies.find((item) => item.slug === slug);
@@ -110,6 +109,7 @@ function App() {
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/tutorials" element={<TutorialsPage />} />
           <Route path="/posts/:slug" element={<PostDetailPage />} />
+          <Route path="/blog/new" element={<ManualPostPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

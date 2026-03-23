@@ -33,4 +33,5 @@ export type BlogPost = {
   intro: string;
   sections: PostSection[];
   keyTakeaways: string[];
+  coverImageUrl?: string | null;
 };

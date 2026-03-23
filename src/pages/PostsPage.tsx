@@ -1,9 +1,27 @@
+import { useEffect, useState } from "react";
 import BlogPostCard from "../components/BlogPostCard";
-import { blogPosts } from "../data/posts.ts";
 import { Link } from "react-router-dom";
+import { BlogPost } from "../types/content";
+import { fetchPosts } from "../lib/blogApi";
 
 const PostsPage: React.FC = () => {
-  const blogOnlyPosts = blogPosts.filter((post) => post.category === "blog");
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const data = await fetchPosts("blog");
+        setPosts(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadPosts();
+  }, []);
 
   return (
     <section className="py-20 bg-black relative overflow-hidden min-h-[70vh]">
@@ -31,11 +49,15 @@ const PostsPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogOnlyPosts.map((post) => (
-            <BlogPostCard key={post.slug} post={post} />
-          ))}
-        </div>
+        {isLoading ? (
+          <p className="text-center text-gray-400">Loading posts...</p>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map((post) => (
+              <BlogPostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

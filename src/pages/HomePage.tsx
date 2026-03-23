@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Experience from "../components/Experience";
@@ -6,13 +7,34 @@ import Contact from "../components/Contact";
 import CaseStudyCard from "../components/CaseStudyCard";
 import BlogPostCard from "../components/BlogPostCard";
 import { projectCaseStudies } from "../data/projects";
-import { blogPosts } from "../data/posts.ts";
 import { Link } from "react-router-dom";
+import { BlogPost } from "../types/content";
+import { fetchPosts } from "../lib/blogApi";
 
 const HomePage: React.FC = () => {
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [tutorialPosts, setTutorialPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const [blogs, tutorials] = await Promise.all([
+          fetchPosts("blog"),
+          fetchPosts("tutorial"),
+        ]);
+        setBlogPosts(blogs);
+        setTutorialPosts(tutorials);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    loadPosts();
+  }, []);
+
   const featuredProjects = projectCaseStudies.slice(0, 3);
-  const latestBlogPosts = blogPosts.filter((post) => post.category === "blog").slice(0, 4);
-  const latestTutorials = blogPosts.filter((post) => post.category === "tutorial").slice(0, 3);
+  const latestBlogPosts = blogPosts.slice(0, 4);
+  const latestTutorials = tutorialPosts.slice(0, 3);
 
   return (
     <>

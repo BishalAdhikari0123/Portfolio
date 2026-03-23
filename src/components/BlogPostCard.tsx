@@ -8,6 +8,14 @@ type BlogPostCardProps = {
 const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
   return (
     <article className="glass-bw rounded-2xl border border-white/15 p-6 hover:glass-bw-strong hover:border-white/35 transition-all duration-300">
+      {post.coverImageUrl && (
+        <img
+          src={post.coverImageUrl}
+          alt={post.title}
+          loading="lazy"
+          className="w-full h-44 object-cover rounded-xl border border-white/20 mb-4"
+        />
+      )}
       <span className="inline-block mb-2 px-2.5 py-1 rounded-md text-xs uppercase tracking-wide bg-white text-black font-semibold">
         {post.category}
       </span>
