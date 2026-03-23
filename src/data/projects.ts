@@ -21,11 +21,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     screenshots: [
       {
         label: "Top-down combat scene with live wave pressure and effects",
-        url: "https://images.pexels.com/photos/371924/pexels-photo-371924.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        url: "/zombieSS.webp",
       },
       {
         label: "HUD and progression-focused gameplay presentation",
-        url: "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        url: "/zombieSS2.webp",
       },
     ],
     repoUrl: "https://github.com/BishalAdhikari0123/zombie-survival",
@@ -50,11 +50,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     screenshots: [
       {
         label: "Community feed and progression widgets",
-        url: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        url: "/leveluplandingpage.webp",
       },
       {
         label: "User dashboard with badges and levels",
-        url: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        url: "/levelupdashboard.webp",
       },
     ],
     repoUrl: "https://github.com/BishalAdhikari0123/LevelUp",
@@ -80,11 +80,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     screenshots: [
       {
         label: "Personalized home feed",
-        url: "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      },
-      {
-        label: "Saved articles and reader preferences",
-        url: "https://images.pexels.com/photos/3944425/pexels-photo-3944425.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        url: "/jokepatra.webp",
       },
     ],
     repoUrl: null,
@@ -110,15 +106,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     screenshots: [
       {
         label: "Author dashboard and content manager",
-        url: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      },
-      {
-        label: "Public article page layout",
-        url: "https://images.pexels.com/photos/267385/pexels-photo-267385.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        url: "/topcollec.webp",
       },
     ],
     repoUrl: null,
-    liveUrl: "https://top-collec-full-stack.vercel.app/",
+    liveUrl: "https://topcollec.vercel.app/",
   },
   {
     slug: "parkour-obby-3d-browser-game",
