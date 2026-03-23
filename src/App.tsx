@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,6 +10,31 @@ import Contact from "./components/Contact";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function App() {
+  useEffect(() => {
+    const MIN_MAIN_CONTENT_LENGTH = 500;
+    const main = document.querySelector("main");
+    const mainContentLength = (main?.textContent ?? "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .length;
+
+    if (mainContentLength < MIN_MAIN_CONTENT_LENGTH) {
+      return;
+    }
+
+    if (document.querySelector('script[data-adsense-loader="true"]')) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    script.src =
+      "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189166525318639";
+    script.setAttribute("data-adsense-loader", "true");
+    document.head.appendChild(script);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
