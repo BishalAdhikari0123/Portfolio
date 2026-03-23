@@ -69,6 +69,11 @@ function extFromMime(mime: string): string {
 
 export default async function handler(req: Req, res: Res) {
   try {
+    if (req.method !== "GET" && req.method !== "POST") {
+      res.setHeader("Allow", ["GET", "POST"]);
+      return res.status(405).json({ error: "Method not allowed" });
+    }
+
     const supabase = getSupabaseAdmin();
 
     if (req.method === "GET") {
@@ -152,6 +157,11 @@ export default async function handler(req: Req, res: Res) {
       let coverImageUrl: string | null = null;
 
       if (typeof imageBase64 === "string" && imageBase64.trim()) {
+        const maxBase64Length = 2_800_000;
+        if (imageBase64.length > maxBase64Length) {
+          return res.status(413).json({ error: "Image payload too large. Please use a smaller image." });
+        }
+
         const cleaned = imageBase64.replace(/^data:[^;]+;base64,/, "");
         const mime = typeof imageMimeType === "string" ? imageMimeType : "application/octet-stream";
         const ext = extFromMime(mime);
@@ -211,11 +221,17 @@ export default async function handler(req: Req, res: Res) {
 
       return res.status(201).json({ success: true, slug: normalizedSlug });
     }
-
-    res.setHeader("Allow", ["GET", "POST"]);
-    return res.status(405).json({ error: "Method not allowed" });
   } catch (error) {
     console.error(error);
+
+    const message = error instanceof Error ? error.message : "Unexpected server error";
+    if (typeof message === "string" && message.includes("Missing Supabase env vars")) {
+      return res.status(500).json({
+        error: "Server configuration incomplete for Supabase",
+        details: message,
+      });
+    }
+
     return res.status(500).json({ error: "Unexpected server error" });
   }
 }
