@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,21 +16,11 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Education", href: "#education" },
-    { name: "Contact", href: "#contact" },
-    { name: "Privacy Policy", href: "#privacy-policy" },
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
+    { name: "Posts", href: "/posts" },
+    { name: "Privacy", href: "/privacy-policy" },
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <motion.header
@@ -52,13 +43,17 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
-              <button
+              <NavLink
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-white transition-all duration-200 font-medium relative group underline-animate"
+                to={item.href}
+                className={({ isActive }) =>
+                  `transition-all duration-200 font-medium relative group underline-animate ${
+                    isActive ? "text-white" : "text-gray-300 hover:text-white"
+                  }`
+                }
               >
                 {item.name}
-              </button>
+              </NavLink>
             ))}
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -91,13 +86,20 @@ const Header: React.FC = () => {
           >
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
-                <button
+                <NavLink
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `text-left px-4 py-2 rounded-lg transition-all duration-200 ${
+                      isActive
+                        ? "text-white bg-white/10"
+                        : "text-gray-300 hover:text-white hover:bg-white/5"
+                    }`
+                  }
                 >
                   {item.name}
-                </button>
+                </NavLink>
               ))}
               <motion.a
                 whileTap={{ scale: 0.95 }}
