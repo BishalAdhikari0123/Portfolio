@@ -85,17 +85,17 @@ const ProjectCaseStudyPage: React.FC = () => {
           </section>
 
           <section className="glass-bw rounded-2xl p-7 border border-white/20">
-            <h2 className="text-2xl font-bold text-white mb-4">Screenshots</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Images</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {project.screenshots.map((screenshot) => (
-                <figure key={screenshot.url} className="space-y-3">
+              {project.images.map((image) => (
+                <figure key={image.url} className="space-y-3">
                   <img
-                    src={screenshot.url}
-                    alt={screenshot.label}
+                    src={image.url}
+                    alt={image.label}
                     loading="lazy"
                     className="w-full h-56 object-cover rounded-xl border border-white/20"
                   />
-                  <figcaption className="text-sm text-gray-400">{screenshot.label}</figcaption>
+                  <figcaption className="text-sm text-gray-400">{image.label}</figcaption>
                 </figure>
               ))}
             </div>

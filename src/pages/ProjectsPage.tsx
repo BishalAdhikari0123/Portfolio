@@ -11,7 +11,7 @@ const ProjectsPage: React.FC = () => {
         <div className="text-center mb-14">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Project Case Studies</h1>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-            Every project is documented with Problem, Solution, Tech used, Challenges, and Screenshots.
+            Every project is documented with Problem, Solution, Tech used, Challenges, and Images.
           </p>
         </div>
 

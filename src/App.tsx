@@ -46,7 +46,7 @@ function App() {
     } else if (location.pathname === "/projects") {
       title = "Projects | Bishal Adhikari";
       description =
-        "Explore project case studies with problem statements, solutions, tech stack, challenges, and screenshots.";
+        "Explore project case studies with problem statements, solutions, tech stack, challenges, and images.";
     } else if (location.pathname === "/contact") {
       title = "Contact | Bishal Adhikari";
       description = "Get in touch with Bishal Adhikari for collaboration, freelance projects, or backend development work.";

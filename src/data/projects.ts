@@ -18,7 +18,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Designing input handling that works smoothly with keyboard/mouse and mobile touch joysticks.",
       "Keeping game systems decoupled so new weapons and mechanics can be added without rewriting core logic.",
     ],
-    screenshots: [
+    images: [
       {
         label: "Top-down combat scene with live wave pressure and effects",
         url: "/zombieSS.webp",
@@ -47,7 +47,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Modeling relational data for users, achievements, and activity logs.",
       "Synchronizing mobile and web behavior for core social flows.",
     ],
-    screenshots: [
+    images: [
       {
         label: "Community feed and progression widgets",
         url: "/leveluplandingpage.webp",
@@ -77,7 +77,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Integrating cron automation with robust secret validation to prevent unauthorized triggers.",
       "Maintaining clear disclaimer boundaries for satirical content.",
     ],
-    screenshots: [
+    images: [
       {
         label: "Personalized home feed",
         url: "/jokepatra.webp",
@@ -103,7 +103,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Keeping SEO metadata consistent across single posts, tags, and author pages.",
       "Balancing image-heavy articles with fast performance budgets on mobile.",
     ],
-    screenshots: [
+    images: [
       {
         label: "Author dashboard and content manager",
         url: "/topcollec.webp",
@@ -129,7 +129,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Building reliable edge climbing logic that avoids accidental teleports or stuck states.",
       "Keeping rendering and physics smooth for 60fps gameplay in browser environments.",
     ],
-    screenshots: [
+    images: [
       {
         label: "Third-person character and floating platform level",
         url: "https://images.pexels.com/photos/7862491/pexels-photo-7862491.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -158,7 +158,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Managing image upload pipeline reliability.",
       "Reducing endpoint complexity while preserving game flexibility.",
     ],
-    screenshots: [
+    images: [
       {
         label: "Raid queue and co-op activity panel",
         url: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -187,7 +187,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Handling order status updates and edge-case payment states.",
       "Designing a simple but effective admin moderation workflow.",
     ],
-    screenshots: [
+    images: [
       {
         label: "Book catalog and detail pages",
         url: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -216,7 +216,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       "Keeping visual consistency across old and new layouts.",
       "Designing scalable content models for future posts.",
     ],
-    screenshots: [
+    images: [
       {
         label: "Homepage hero and quick navigation",
         url: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",

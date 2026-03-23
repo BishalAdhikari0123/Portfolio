@@ -1,4 +1,4 @@
-export type Screenshot = {
+export type ProjectImage = {
   label: string;
   url: string;
 };
@@ -12,7 +12,7 @@ export type ProjectCaseStudy = {
   solution: string;
   techUsed: string[];
   challenges: string[];
-  screenshots: Screenshot[];
+  images: ProjectImage[];
   repoUrl: string | null;
   liveUrl: string | null;
 };
