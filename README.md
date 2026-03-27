@@ -1,238 +1,175 @@
-# Bishal Adhikari - Personal Portfolio Website
+# Bishal Adhikari — Portfolio
 
-A modern, responsive personal portfolio website built with React, Vite, and Tailwind CSS. Features smooth animations, a clean design, and comprehensive sections showcasing backend development expertise.
+This repository powers my personal portfolio website and technical content hub.
 
-## ✨ Features
+🌐 **Live site:** [https://bishaladhikari1.com.np](https://bishaladhikari1.com.np)
 
-- **Responsive Design**: Mobile-first approach with optimized layouts for all device sizes
-- **Smooth Animations**: Framer Motion integration for engaging user interactions
-- **Modern UI**: Clean design with custom color scheme and typography
-- **Performance Optimized**: Built with Vite for fast development and optimized builds
-- **SEO Friendly**: Proper meta tags and semantic HTML structure
-- **Contact Integration**: Frontend-only contact form with mailto functionality
+## Professional summary
 
-## 🚀 Tech Stack
+I am a backend-focused full stack developer based in Pokhara, Nepal, with a strong interest in building scalable APIs, real-time systems, and production-ready web applications. My work sits at the intersection of practical software engineering and clear technical communication: I build systems, document trade-offs, and share the reasoning behind architecture decisions.
 
-- **Frontend**: React 18 + TypeScript
-- **Styling**: Tailwind CSS with custom theme
-- **Animations**: Framer Motion
-- **Build Tool**: Vite
-- **Icons**: Lucide React
-- **Fonts**: EB Garamond + Inter (Google Fonts)
+This portfolio is designed to do more than showcase finished screens. It is built to show **how I think**, **how I solve technical problems**, and **how I deliver maintainable products** across the backend and frontend stack.
 
-## 🛠️ Development
+## About this portfolio
 
-### Prerequisites
+I am a backend-focused full stack developer from Pokhara, Nepal. This portfolio highlights:
 
-- Node.js (v18 or higher)
-- npm or yarn
+- Project case studies
+- Blog posts and tutorials
+- Backend/API engineering focus
+- Contact and collaboration details
 
-### Installation
+The site reflects my current technical direction:
 
-1. Clone the repository
+- API-first architecture for reliable integrations
+- Type-safe development with clean contracts
+- Performance-aware UI/UX and route structure
+- SEO-oriented content strategy for discoverability
+- Documentation quality as part of engineering quality
 
-```bash
-git clone https://github.com/BishalAdhikari0123/portfolio-website.git
-cd portfolio-website
-```
+## What you can explore on the site
 
-2. Install dependencies
+- **Home:** Personal overview and technical focus
+- **Projects:** Detailed case studies with problem → solution → result
+- **Blog/Tutorials:** Practical engineering notes on Node.js, Next.js, and full-stack workflows
+- **Contact:** Collaboration and freelance inquiry options
 
-```bash
-npm install
-```
+### Home
 
-3. Start development server
+The home page introduces my role and core strengths, with clear navigation to case studies, technical posts, and contact options. It is intentionally structured for both user clarity and search discoverability.
 
-```bash
-npm run dev
-```
+### Projects
 
-4. Build for production
+Project pages are written as technical case studies rather than one-line summaries. Each case study follows a structured narrative:
 
-```bash
-npm run build
-```
+- Problem context
+- Engineering approach
+- Technology choices
+- Constraints and trade-offs
+- Result and impact
 
-### Available Scripts
+This format helps visitors, recruiters, and collaborators evaluate my practical problem-solving process.
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run typecheck` - Run TypeScript type checking
-- `pnpm seo:sitemap` - Regenerate `public/sitemap.xml` from current posts/projects slugs
+### Blog and tutorials
 
-### SEO post batch workflow
+The content section focuses on applied engineering topics: backend architecture, API design, debugging workflows, deployment reliability, and portfolio/SEO strategy for developers. The goal is to publish content that is actionable and grounded in real project experience.
 
-After publishing a new batch of posts:
+### Contact
 
-1. Regenerate sitemap via `pnpm seo:sitemap`
-2. Deploy the updated build
-3. Open Google Search Console → Sitemaps and resubmit:
-  - `https://bishaladhikari1.com.np/sitemap.xml`
+The contact section is built for direct communication around freelance work, collaborations, and technical opportunities.
 
-> Note: Search Console submission requires account access, so it cannot be fully automated from repository code alone.
+## What I focus on
 
-## 🗄️ Supabase Blog Setup
+### Backend engineering
 
-Posts are now sourced from Supabase (database for posts only), and manual publishing is available at `/blog/new`.
+- Designing modular API layers in Node.js/TypeScript
+- Building robust auth and validation workflows
+- Modeling relational data for scale and clarity
+- Creating maintainable services with clean boundaries
 
-### Required environment variables
+### Full stack delivery
 
-Set these in `.env` locally and in your hosting environment:
+- Building React/Next.js frontends that support real product workflows
+- Connecting frontend and backend with explicit contracts
+- Implementing practical UX patterns that prioritize speed and clarity
 
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY`
-- `BLOG_POSTER_ID`
+### Technical communication
 
-### Database and storage setup
+- Writing case studies with engineering depth
+- Publishing practical tutorials and architecture notes
+- Explaining trade-offs and decisions in a clear, usable format
 
-Run `supabase/blog_posts_setup.sql` in Supabase SQL Editor. It creates:
+## Core stack
 
-- `public.blog_posts` table
-- indexes + `updated_at` trigger
-- a read policy for published posts
-- `blog-images` public storage bucket for optional cover images
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Supabase (blog content backend)
 
-### Manual publish workflow
+I also regularly work with Node.js, Express, PostgreSQL, JWT-based auth systems, and deployment-focused tooling for production workflows.
 
-1. Visit `/blog/new`.
-2. Enter the private poster ID (`BLOG_POSTER_ID`).
-3. Fill post fields and optionally attach an image.
-4. Publish and get redirected to `/posts/:slug`.
+## Portfolio philosophy
 
-## 📦 Deployment
+This website is built around a simple idea:
 
-### GitHub Pages
+> A strong developer portfolio should show decision-making quality, not just final visuals.
 
-1. Install GitHub Pages package:
+That means each major section is intentionally designed for:
 
-```bash
-npm install --save-dev gh-pages
-```
+- **Credibility:** real projects with clear technical depth
+- **Clarity:** structured content that is easy to scan
+- **Discoverability:** SEO-aware pages and internal linking
+- **Conversion:** clear calls to action for collaboration
 
-2. Add to `package.json`:
+## Who this portfolio is for
 
-```json
-{
-  "homepage": "https://BishalAdhikari0123.github.io/portfolio-website",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
-}
-```
+- Recruiters evaluating full stack/backend candidates
+- Founders looking for implementation-focused technical partners
+- Teams exploring freelance or project-based collaboration
+- Developers interested in practical architecture and delivery patterns
 
-3. Update `vite.config.ts`:
+## Areas of interest
 
-```typescript
-export default defineConfig({
-  plugins: [react()],
-  base: "/portfolio-website/",
-  optimizeDeps: {
-    exclude: ["lucide-react"],
-  },
-});
-```
+- Scalable backend API architecture
+- Real-time systems and event-driven features
+- Type-safe full-stack workflows
+- Developer-focused SEO and content strategy
+- Performance and maintainability in production apps
 
-4. Deploy:
+## Selected working principles
 
-```bash
-npm run deploy
-```
+### Build for maintainability
 
-### Cloudflare Pages
+I prefer architecture that can be extended by teams over time. Clean module boundaries and predictable naming reduce long-term complexity.
 
-1. Build the project:
+### Optimize for reliability over novelty
 
-```bash
-npm run build
-```
+Stable and understandable systems outperform clever but fragile patterns in real production workflows.
 
-2. Connect your GitHub repository to Cloudflare Pages
-3. Set build settings:
-   - **Build command**: `npm run build`
-   - **Build output directory**: `dist`
-   - **Node.js version**: 18+
+### Keep technical writing practical
 
-4. Deploy automatically on every push to main branch
+I focus on publishing content that helps someone ship better software, not just consume theory.
 
-### Vercel
+### Prioritize outcomes
 
-1. Install Vercel CLI:
+Every project should connect implementation details to measurable or visible outcomes.
 
-```bash
-npm install -g vercel
-```
+## Collaboration snapshot
 
-2. Deploy:
+If we work together, my default approach is straightforward:
 
-```bash
-vercel --prod
-```
+1. Clarify problem and constraints
+2. Propose a simple architecture path
+3. Deliver incrementally with clear communication
+4. Document key decisions for long-term maintainability
 
-Or connect your GitHub repository directly through the Vercel dashboard.
+This approach keeps delivery predictable while still allowing flexibility as requirements evolve.
 
-## 🎨 Customization
+## Platform links
 
-### Colors
+- **Website:** [bishaladhikari1.com.np](https://bishaladhikari1.com.np)
+- **GitHub:** [BishalAdhikari0123](https://github.com/BishalAdhikari0123)
+- **LinkedIn:** [Bishal Adhikari](https://www.linkedin.com/in/bishal-adhikari-051a09296/)
+- **Dev.to:** [bishaladhikari0123](https://dev.to/bishaladhikari0123)
+- **Medium:** [@bishaladhikari0123](https://medium.com/@bishaladhikari0123)
 
-The color scheme is defined in `tailwind.config.js`:
+## Contact
 
-- **Primary**: Deep Purple (#5B2C6F)
-- **Accent**: Golden Yellow (#F1C40F)
+- **Email:** bsaladkari@gmail.com
+- **LinkedIn:** [Bishal Adhikari](https://www.linkedin.com/in/bishal-adhikari-051a09296/)
+- **GitHub:** [BishalAdhikari0123](https://github.com/BishalAdhikari0123)
 
-### Content
+If you are working on backend-heavy features, API design, or a full stack product that needs reliable implementation and clean structure, feel free to reach out.
 
-Update personal information in the respective component files:
+## Repository scope
 
-- `src/components/Hero.tsx` - Hero section content
-- `src/components/About.tsx` - About section content
-- `src/components/Skills.tsx` - Skills and technologies
-- `src/components/Projects.tsx` - Project information and links
-- `src/components/Contact.tsx` - Contact information
+This repository is primarily maintained as my personal portfolio codebase and content platform.
 
-### Fonts
+- The structure is tailored to my own website and content workflow.
+- Some decisions here are specific to my personal branding and use cases.
+- While others can still learn from it, it is not maintained as a general starter template.
 
-The website uses:
+## Repository note
 
-- **Body text**: EB Garamond (serif)
-- **Headings**: Inter (sans-serif)
-
-Fonts are loaded from Google Fonts in `index.html`.
-
-## 📁 Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── Header.tsx      # Navigation header
-│   ├── Hero.tsx        # Hero/landing section
-│   ├── About.tsx       # About me section
-│   ├── Skills.tsx      # Technical skills
-│   ├── Projects.tsx    # Project showcase
-│   └── Contact.tsx     # Contact information
-├── App.tsx             # Main application component
-├── main.tsx           # Application entry point
-├── index.css          # Global styles
-└── vite-env.d.ts      # Vite type definitions
-```
-
-## 📧 Contact
-
-Feel free to reach out for collaborations or opportunities:
-
-- **Email**: bsaladkari@gmail.com
-- **LinkedIn**: [Bishal Adhikari](https://www.linkedin.com/in/bishal-adhikari-051a09296/)
-- **GitHub**: [BishalAdhikari0123](https://github.com/BishalAdhikari0123)
-- **Location**: Pokhara, Nepal
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-Built with ❤️ by Bishal Adhikari
+This is a personal portfolio project, so the README focuses on who I am, what I build, and how to explore the site.
