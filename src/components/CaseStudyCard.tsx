@@ -24,8 +24,13 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-1">Solution</h4>
+          <h4 className="text-white font-semibold mb-1">What I built</h4>
           <p className="text-gray-400 text-sm leading-relaxed">{project.solution}</p>
+        </div>
+
+        <div>
+          <h4 className="text-white font-semibold mb-1">Result</h4>
+          <p className="text-gray-400 text-sm leading-relaxed">{project.summary}</p>
         </div>
       </div>
 

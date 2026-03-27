@@ -114,6 +114,44 @@ const PostDetailPage: React.FC = () => {
             </ul>
           </section>
 
+          {post.resourceLinks && post.resourceLinks.length > 0 && (
+            <section className="glass-bw rounded-2xl p-7 border border-white/20">
+              <h2 className="text-2xl font-bold text-white mb-3">Project and profile links</h2>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Explore related project pages, contact options, and profile links connected to this article.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {post.resourceLinks.map((item) => {
+                  const isInternal = item.type !== "external" && item.href.startsWith("/");
+
+                  if (isInternal) {
+                    return (
+                      <Link
+                        key={`${item.href}-${item.label}`}
+                        to={item.href}
+                        className="px-4 py-2 rounded-lg border border-white/30 text-white hover:bg-white/10 transition-colors font-medium"
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <a
+                      key={`${item.href}-${item.label}`}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-lg border border-white/30 text-white hover:bg-white/10 transition-colors font-medium"
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
           <section className="glass-bw rounded-2xl p-7 border border-white/20">
             <h2 className="text-2xl font-bold text-white mb-3">Continue reading</h2>
             <div className="grid md:grid-cols-2 gap-3 mb-4">

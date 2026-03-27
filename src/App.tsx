@@ -18,38 +18,67 @@ import { projectCaseStudies } from "./data/projects";
 
 function App() {
   const location = useLocation();
+  const siteUrl = "https://bishaladhikari1.com.np";
+
+  const upsertMetaTag = (selector: string, attributes: Record<string, string>, content: string) => {
+    let tag = document.querySelector<HTMLMetaElement>(selector);
+
+    if (!tag) {
+      tag = document.createElement("meta");
+      Object.entries(attributes).forEach(([key, value]) => {
+        tag?.setAttribute(key, value);
+      });
+      document.head.appendChild(tag);
+    }
+
+    tag.setAttribute("content", content);
+  };
+
+  const upsertLinkTag = (selector: string, attributes: Record<string, string>) => {
+    let tag = document.querySelector<HTMLLinkElement>(selector);
+
+    if (!tag) {
+      tag = document.createElement("link");
+      document.head.appendChild(tag);
+    }
+
+    Object.entries(attributes).forEach(([key, value]) => {
+      tag?.setAttribute(key, value);
+    });
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, [location.pathname]);
 
   useEffect(() => {
-    const defaultTitle = "Bishal Adhikari | Tech Blog + Portfolio";
+    const defaultTitle = "Bishal Adhikari | Full Stack Developer in Nepal (Node.js, Next.js)";
     const defaultDescription =
-      "Technical tutorials, project case studies, and backend/full-stack engineering notes by Bishal Adhikari.";
+      "Full Stack Developer in Nepal specializing in Node.js backend APIs, Next.js apps, and scalable real-time systems.";
 
     let title = defaultTitle;
     let description = defaultDescription;
+    const canonicalPath = location.pathname === "/" ? "/" : location.pathname;
 
     if (location.pathname === "/") {
-      title = "Home | Bishal Adhikari";
+      title = "Bishal Adhikari | Full Stack Developer in Nepal (Node.js, Next.js)";
       description =
-        "Tech blog + portfolio featuring development tutorials, case studies, and practical engineering insights.";
+        "Backend-focused full stack developer building scalable APIs, real-time apps, and modern web platforms. View projects, tutorials, and hire options.";
     } else if (location.pathname === "/posts" || location.pathname === "/blog") {
-      title = "Blog | Bishal Adhikari";
+      title = "Node.js & Next.js Blog | Bishal Adhikari";
       description =
-        "Read in-depth software engineering articles on React, Next.js, Node.js, deployment, and backend architecture.";
+        "Read practical Node.js, Next.js, and backend architecture articles from a full stack developer in Nepal.";
     } else if (location.pathname === "/tutorials") {
-      title = "Tutorials | Bishal Adhikari";
+      title = "Full-Stack Tutorials | Bishal Adhikari";
       description =
-        "Step-by-step tutorials for full-stack developers: React, TypeScript, Supabase, Next.js, and APIs.";
+        "Step-by-step tutorials on React, TypeScript, Next.js, Supabase, and scalable API development.";
     } else if (location.pathname === "/projects") {
-      title = "Projects | Bishal Adhikari";
+      title = "Project Case Studies | Bishal Adhikari";
       description =
-        "Explore project case studies with problem statements, solutions, tech stack, challenges, and images.";
+        "Explore real project case studies with problem, solution, technical decisions, and engineering outcomes.";
     } else if (location.pathname === "/contact") {
-      title = "Contact | Bishal Adhikari";
-      description = "Get in touch with Bishal Adhikari for collaboration, freelance projects, or backend development work.";
+      title = "Hire Full Stack Developer in Nepal | Contact Bishal Adhikari";
+      description = "Get in touch for backend API development, full-stack projects, and freelance engineering collaboration.";
     } else if (location.pathname === "/blog/new") {
       title = "Publish Blog Post | Bishal Adhikari";
       description = "Secure manual publishing page for adding blog posts and optional cover images.";
@@ -66,10 +95,63 @@ function App() {
     }
 
     document.title = title;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", description);
+    upsertMetaTag('meta[name="description"]', { name: "description" }, description);
+    upsertMetaTag('meta[name="robots"]', { name: "robots" }, "index, follow");
+    upsertMetaTag('meta[property="og:type"]', { property: "og:type" }, "website");
+    upsertMetaTag('meta[property="og:title"]', { property: "og:title" }, title);
+    upsertMetaTag('meta[property="og:description"]', { property: "og:description" }, description);
+    upsertMetaTag('meta[property="og:url"]', { property: "og:url" }, `${siteUrl}${canonicalPath}`);
+    upsertMetaTag('meta[property="og:image"]', { property: "og:image" }, `${siteUrl}/profile.webp`);
+    upsertMetaTag('meta[name="twitter:card"]', { name: "twitter:card" }, "summary_large_image");
+    upsertMetaTag('meta[name="twitter:title"]', { name: "twitter:title" }, title);
+    upsertMetaTag('meta[name="twitter:description"]', { name: "twitter:description" }, description);
+    upsertMetaTag('meta[name="twitter:image"]', { name: "twitter:image" }, `${siteUrl}/profile.webp`);
+    upsertLinkTag('link[rel="canonical"]', {
+      rel: "canonical",
+      href: `${siteUrl}${canonicalPath}`,
+    });
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const schemaId = "person-website-schema";
+    const existing = document.getElementById(schemaId);
+    if (existing) {
+      existing.remove();
     }
+
+    const schemaScript = document.createElement("script");
+    schemaScript.id = schemaId;
+    schemaScript.type = "application/ld+json";
+    schemaScript.text = JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Bishal Adhikari",
+        jobTitle: "Full Stack Developer",
+        url: siteUrl,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Pokhara",
+          addressCountry: "NP",
+        },
+        sameAs: [
+          "https://github.com/BishalAdhikari0123",
+          "https://www.linkedin.com/in/bishal-adhikari-051a09296/",
+        ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Bishal Adhikari Portfolio",
+        url: siteUrl,
+      },
+    ]);
+
+    document.head.appendChild(schemaScript);
+
+    return () => {
+      schemaScript.remove();
+    };
   }, [location.pathname]);
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, MapPin, Code, Database } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const scrollToAbout = () => {
@@ -52,24 +53,23 @@ const Hero: React.FC = () => {
               />
             </motion.div>
 
-            {/* Name */}
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-4">
+            {/* Primary SEO Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-5 text-white leading-tight">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="block text-white"
+                className="block"
               >
-                Bishal
+                Full Stack Developer in Nepal
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="block text-white font-extrabold relative inline-block"
+                className="block text-gray-200 text-2xl sm:text-3xl lg:text-4xl font-semibold mt-3"
               >
-                Adhikari
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-white"></span>
+                Bishal Adhikari · Node.js Backend & Next.js Engineer
               </motion.span>
             </h1>
           </motion.div>
@@ -86,15 +86,10 @@ const Hero: React.FC = () => {
               <span className="text-gray-300 font-medium">Pokhara, Nepal</span>
             </div>
 
-            {/* Title */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white mb-6 font-semibold">
-              Backend-focused Full-Stack Developer
-            </h2>
-
             <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Crafting <span className="text-white font-semibold">scalable REST APIs</span> and{" "}
-              <span className="text-white font-semibold">real-time applications</span>.
-              Specialized in Node.js/TypeScript, PostgreSQL, and MongoDB.
+              I help teams ship <span className="text-white font-semibold">scalable backend APIs</span>,{" "}
+              <span className="text-white font-semibold">real-time web systems</span>, and modern product experiences.
+              Specialized in Node.js, TypeScript, Next.js, PostgreSQL, and MongoDB.
             </p>
           </motion.div>
 
@@ -120,20 +115,53 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center gap-4 mb-8"
           >
-            <a
-              href="#projects"
+            <Link
+              to="/contact"
               className="px-8 py-4 bg-white text-black font-semibold rounded-xl hover:bg-gray-200 hover-scale"
             >
-              View Projects
-            </a>
-            <a
-              href="#contact"
+              Hire Me
+            </Link>
+            <Link
+              to="/projects"
               className="px-8 py-4 glass-bw text-white font-semibold rounded-xl border-2 border-white/20 hover:border-white/60 hover-scale"
             >
-              Get In Touch
+              View Projects
+            </Link>
+            <Link
+              to="/blog"
+              className="px-8 py-4 glass-bw text-white font-semibold rounded-xl border-2 border-white/20 hover:border-white/60 hover-scale"
+            >
+              Read Blog
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.25 }}
+            className="flex flex-wrap justify-center gap-3 mb-10"
+          >
+            <a
+              href="https://github.com/BishalAdhikari0123"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg border border-white/20 text-gray-300 hover:text-white hover:border-white/40 transition-colors"
+            >
+              GitHub Projects
             </a>
+            <a
+              href="https://www.linkedin.com/in/bishal-adhikari-051a09296/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg border border-white/20 text-gray-300 hover:text-white hover:border-white/40 transition-colors"
+            >
+              LinkedIn Profile
+            </a>
+            <span className="px-4 py-2 rounded-lg border border-white/20 text-gray-300">
+              Open to freelance and remote work
+            </span>
           </motion.div>
 
           {/* Scroll Indicator */}

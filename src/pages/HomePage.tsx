@@ -43,14 +43,14 @@ const HomePage: React.FC = () => {
       <Experience />
       <Skills />
 
-      <section className="py-20 bg-black relative overflow-hidden">
+      <section id="projects" className="py-20 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-14">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Featured Case Studies</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Featured Node.js & Next.js Case Studies</h2>
             <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-              Real projects explained with clear problem statements, implementation details, and engineering trade-offs.
+              Real projects explained with clear problem statements, implementation details, engineering trade-offs, and outcomes.
             </p>
           </div>
 

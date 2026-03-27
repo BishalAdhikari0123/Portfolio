@@ -9,7 +9,31 @@ type PostSeed = {
   tags: string[];
   focus: string;
   stack: string;
+  resourceLinks?: { label: string; href: string; type?: "internal" | "external" }[];
 };
+
+const authorProfileLinks = [
+  {
+    label: "GitHub profile backlink",
+    href: "https://github.com/BishalAdhikari0123",
+    type: "external" as const,
+  },
+  {
+    label: "LinkedIn profile backlink",
+    href: "https://www.linkedin.com/in/bishal-adhikari-051a09296/",
+    type: "external" as const,
+  },
+  {
+    label: "Dev.to profile backlink",
+    href: "https://dev.to/bishaladhikari0123",
+    type: "external" as const,
+  },
+  {
+    label: "Medium profile backlink",
+    href: "https://medium.com/@bishaladhikari0123",
+    type: "external" as const,
+  },
+];
 
 const longSection = (
   heading: string,
@@ -34,6 +58,69 @@ const buildLongSections = (focus: string, stack: string): PostSection[] => [
 ];
 
 const seeds: PostSeed[] = [
+  {
+    slug: "nodejs-developer-portfolio-nepal-backend-api-guide",
+    category: "blog",
+    title: "Node.js Developer Portfolio Nepal: How I Build Scalable Backend APIs",
+    excerpt:
+      "Keyword-focused backend guide explaining how a Node.js developer in Nepal designs reliable APIs for production workloads.",
+    publishedAt: "2026-03-27",
+    tags: ["Node.js Developer Nepal", "Backend API Development", "Portfolio SEO"],
+    focus: "building scalable backend APIs as a Node.js developer in Nepal",
+    stack: "Node.js + Express + TypeScript + PostgreSQL",
+    resourceLinks: [
+      { label: "See all project case studies", href: "/projects", type: "internal" },
+      { label: "Hire me for backend API work", href: "/contact", type: "internal" },
+      {
+        label: "Recipe Raid backend case study",
+        href: "/projects/recipe-raid-multiplayer-platform",
+        type: "internal",
+      },
+      ...authorProfileLinks,
+    ],
+  },
+  {
+    slug: "hire-full-stack-developer-nepal-checklist",
+    category: "blog",
+    title: "Hire Full Stack Developer in Nepal: 7-Point Project Checklist",
+    excerpt:
+      "A practical hiring checklist to evaluate full-stack developers in Nepal for API-heavy and modern web app projects.",
+    publishedAt: "2026-03-26",
+    tags: ["Hire Full Stack Developer Nepal", "Technical Hiring", "Project Delivery"],
+    focus: "evaluating and hiring a full stack developer in Nepal",
+    stack: "Node.js + Next.js + TypeScript delivery workflows",
+    resourceLinks: [
+      { label: "Browse implementation case studies", href: "/projects", type: "internal" },
+      { label: "Start a project discussion", href: "/contact", type: "internal" },
+      {
+        label: "LevelUp full-stack case study",
+        href: "/projects/levelup-skill-community-platform",
+        type: "internal",
+      },
+      ...authorProfileLinks,
+    ],
+  },
+  {
+    slug: "nextjs-portfolio-example-nepal-seo-conversion-playbook",
+    category: "blog",
+    title: "Next.js Portfolio Example for Nepal Developers: SEO + Conversion Playbook",
+    excerpt:
+      "A detailed SEO and conversion framework for developers in Nepal who want portfolio sites that rank and generate leads.",
+    publishedAt: "2026-03-25",
+    tags: ["Next.js Portfolio Example", "Developer SEO Nepal", "Conversion Optimization"],
+    focus: "optimizing a Next.js portfolio for SEO and conversion in Nepal",
+    stack: "Next.js/React SEO architecture + technical content strategy",
+    resourceLinks: [
+      { label: "View all project pages", href: "/projects", type: "internal" },
+      { label: "Contact for portfolio optimization help", href: "/contact", type: "internal" },
+      {
+        label: "Portfolio website case study",
+        href: "/projects/portfolio-website-case-study",
+        type: "internal",
+      },
+      ...authorProfileLinks,
+    ],
+  },
   {
     slug: "how-to-build-react-apps-architecture-guide",
     category: "tutorial",
@@ -238,4 +325,5 @@ export const blogPosts: BlogPost[] = seeds.map((seed) => ({
     "Prioritize maintainability and reliable deployment over short-term hacks.",
     "Use internal linking and consistent publishing to compound SEO value.",
   ],
+  resourceLinks: seed.resourceLinks,
 }));

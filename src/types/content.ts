@@ -22,6 +22,12 @@ export type PostSection = {
   paragraphs: string[];
 };
 
+export type PostResourceLink = {
+  label: string;
+  href: string;
+  type?: "internal" | "external";
+};
+
 export type BlogPost = {
   slug: string;
   category: "blog" | "tutorial";
@@ -34,4 +40,5 @@ export type BlogPost = {
   sections: PostSection[];
   keyTakeaways: string[];
   coverImageUrl?: string | null;
+  resourceLinks?: PostResourceLink[];
 };

@@ -62,6 +62,22 @@ const SiteFooter: React.FC = () => {
             >
               LinkedIn
             </a>
+            <a
+              href="https://dev.to/bishaladhikari0123"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
+            >
+              Dev.to
+            </a>
+            <a
+              href="https://medium.com/@bishaladhikari0123"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"
+            >
+              Medium
+            </a>
           </div>
         </div>
       </div>

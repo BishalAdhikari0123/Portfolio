@@ -61,6 +61,18 @@ npm run build
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 - `npm run typecheck` - Run TypeScript type checking
+- `pnpm seo:sitemap` - Regenerate `public/sitemap.xml` from current posts/projects slugs
+
+### SEO post batch workflow
+
+After publishing a new batch of posts:
+
+1. Regenerate sitemap via `pnpm seo:sitemap`
+2. Deploy the updated build
+3. Open Google Search Console → Sitemaps and resubmit:
+  - `https://bishaladhikari1.com.np/sitemap.xml`
+
+> Note: Search Console submission requires account access, so it cannot be fully automated from repository code alone.
 
 ## 🗄️ Supabase Blog Setup
 

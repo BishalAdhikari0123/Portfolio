@@ -60,8 +60,13 @@ const ProjectCaseStudyPage: React.FC = () => {
           </section>
 
           <section className="glass-bw rounded-2xl p-7 border border-white/20">
-            <h2 className="text-2xl font-bold text-white mb-3">Solution</h2>
+            <h2 className="text-2xl font-bold text-white mb-3">What I built</h2>
             <p className="text-gray-300 leading-relaxed">{project.solution}</p>
+          </section>
+
+          <section className="glass-bw rounded-2xl p-7 border border-white/20">
+            <h2 className="text-2xl font-bold text-white mb-3">Result</h2>
+            <p className="text-gray-300 leading-relaxed">{project.summary}</p>
           </section>
 
           <section className="glass-bw rounded-2xl p-7 border border-white/20">
