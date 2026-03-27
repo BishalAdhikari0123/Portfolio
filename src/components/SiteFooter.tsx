@@ -71,7 +71,7 @@ const SiteFooter: React.FC = () => {
               Dev.to
             </a>
             <a
-              href="https://medium.com/@bishaladhikari0123"
+              href="https://medium.com/@bsaladkari"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-200 font-medium underline-animate"

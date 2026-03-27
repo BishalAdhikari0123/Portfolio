@@ -152,7 +152,7 @@ This approach keeps delivery predictable while still allowing flexibility as req
 - **GitHub:** [BishalAdhikari0123](https://github.com/BishalAdhikari0123)
 - **LinkedIn:** [Bishal Adhikari](https://www.linkedin.com/in/bishal-adhikari-051a09296/)
 - **Dev.to:** [bishaladhikari0123](https://dev.to/bishaladhikari0123)
-- **Medium:** [@bishaladhikari0123](https://medium.com/@bishaladhikari0123)
+- **Medium:** [@bsaladkari](https://medium.com/@bsaladkari)
 
 ## Contact
 

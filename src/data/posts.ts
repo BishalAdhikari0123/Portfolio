@@ -30,7 +30,7 @@ const authorProfileLinks = [
   },
   {
     label: "Medium profile backlink",
-    href: "https://medium.com/@bishaladhikari0123",
+    href: "https://medium.com/@bsaladkari",
     type: "external" as const,
   },
 ];
