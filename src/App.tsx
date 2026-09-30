@@ -14,6 +14,8 @@ import ContactPage from "./pages/ContactPage";
 import TermsPage from "./pages/TermsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ManualPostPage from "./pages/ManualPostPage";
+import ModelMetricsPage from "./pages/ModelMetricsPage";
+import ToolsPage from "./pages/ToolsPage";
 import { projectCaseStudies } from "./data/projects";
 
 function App() {
@@ -72,6 +74,12 @@ function App() {
       title = "Full-Stack Tutorials | Bishal Adhikari";
       description =
         "Step-by-step tutorials on React, TypeScript, Next.js, Supabase, and scalable API development.";
+    } else if (location.pathname === "/tools") {
+      title = "Free Data Science Tools | Bishal Adhikari";
+      description = "Free practical utilities and downloadable checklists for data science and backend projects.";
+    } else if (location.pathname === "/tools/model-metrics") {
+      title = "Classification Metrics Calculator | Bishal Adhikari";
+      description = "Calculate precision, recall, F1 score, and accuracy from a confusion matrix.";
     } else if (location.pathname === "/projects") {
       title = "Project Case Studies | Bishal Adhikari";
       description =
@@ -190,6 +198,8 @@ function App() {
           <Route path="/blog" element={<PostsPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/tutorials" element={<TutorialsPage />} />
+          <Route path="/tools" element={<ToolsPage />} />
+          <Route path="/tools/model-metrics" element={<ModelMetricsPage />} />
           <Route path="/posts/:slug" element={<PostDetailPage />} />
           <Route path="/blog/new" element={<ManualPostPage />} />
           <Route path="/about" element={<AboutPage />} />

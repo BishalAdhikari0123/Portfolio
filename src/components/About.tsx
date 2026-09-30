@@ -80,6 +80,21 @@ const About: React.FC = () => {
             </div>
           </motion.div>
 
+          <div className="mt-10 grid grid-cols-3 gap-3 border-y border-white/10 py-6 text-center lg:col-span-2">
+            <div>
+              <p className="text-2xl font-bold text-white">9+</p>
+              <p className="mt-1 text-xs uppercase tracking-wide text-gray-500">documented projects</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">30+</p>
+              <p className="mt-1 text-xs uppercase tracking-wide text-gray-500">API endpoints in one build</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">MSc</p>
+              <p className="mt-1 text-xs uppercase tracking-wide text-gray-500">data science, in progress</p>
+            </div>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}

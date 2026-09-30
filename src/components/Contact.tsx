@@ -11,6 +11,9 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    projectType: "",
+    budget: "",
+    timeline: "",
     message: "",
   });
 
@@ -37,7 +40,7 @@ const Contact: React.FC = () => {
       }
 
       setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", projectType: "", budget: "", timeline: "", message: "" });
     } catch (error) {
       const message = error instanceof Error ? error.message : "Something went wrong";
       setErrorMessage(message);
@@ -46,7 +49,7 @@ const Contact: React.FC = () => {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -209,6 +212,52 @@ const Contact: React.FC = () => {
                   className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-200 text-white placeholder-gray-500"
                   placeholder="Your full name"
                 />
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                <label className="block text-sm font-medium text-gray-300">
+                  Project type
+                  <select
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleInputChange}
+                    className="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-3 py-3 font-normal text-white outline-none focus:border-white/60 focus:ring-2 focus:ring-white/20"
+                  >
+                    <option value="" className="bg-black">Select one</option>
+                    <option value="backend" className="bg-black">Backend / API</option>
+                    <option value="data" className="bg-black">Data / ML</option>
+                    <option value="review" className="bg-black">Project review</option>
+                    <option value="role" className="bg-black">Job / collaboration</option>
+                  </select>
+                </label>
+                <label className="block text-sm font-medium text-gray-300">
+                  Budget range
+                  <select
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleInputChange}
+                    className="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-3 py-3 font-normal text-white outline-none focus:border-white/60 focus:ring-2 focus:ring-white/20"
+                  >
+                    <option value="" className="bg-black">Prefer not to say</option>
+                    <option value="under-500" className="bg-black">Under £500</option>
+                    <option value="500-1500" className="bg-black">£500 - £1,500</option>
+                    <option value="1500-plus" className="bg-black">£1,500+</option>
+                  </select>
+                </label>
+                <label className="block text-sm font-medium text-gray-300">
+                  Target timeline
+                  <select
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleInputChange}
+                    className="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-3 py-3 font-normal text-white outline-none focus:border-white/60 focus:ring-2 focus:ring-white/20"
+                  >
+                    <option value="" className="bg-black">Select one</option>
+                    <option value="exploring" className="bg-black">Just exploring</option>
+                    <option value="month" className="bg-black">This month</option>
+                    <option value="quarter" className="bg-black">Next 1 - 3 months</option>
+                  </select>
+                </label>
               </div>
 
               <div>

@@ -10,7 +10,7 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, message } = req.body || {};
+  const { name, email, projectType, budget, timeline, message } = req.body || {};
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing fields' });
@@ -22,7 +22,15 @@ export default async function handler(req: any, res: any) {
       to: process.env.CONTACT_TO_EMAIL as string,
       replyTo: email,
       subject: `New portfolio message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      text: [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Project type: ${projectType || "Not specified"}`,
+        `Budget: ${budget || "Not specified"}`,
+        `Timeline: ${timeline || "Not specified"}`,
+        "",
+        `Message:\n${message}`,
+      ].join("\n"),
     });
 
     if (error) {

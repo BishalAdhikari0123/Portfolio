@@ -53,9 +53,17 @@ const Services: React.FC = () => {
 
         <div className="mt-10 flex flex-col items-start gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-xl text-gray-400">Have a problem in mind? Send the context, constraints, and what a useful outcome would look like.</p>
-          <Link to="/contact" className="inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold text-black transition-colors hover:bg-gray-200">
-            Start a conversation
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/tools/model-metrics" className="inline-flex items-center rounded-lg border border-white/25 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/10">
+              Try a free tool
+            </Link>
+            <Link to="/contact" className="inline-flex items-center rounded-lg bg-white px-6 py-3 font-semibold text-black transition-colors hover:bg-gray-200">
+              Start a conversation
+            </Link>
+          </div>
+        </div>
+        <div className="mt-6 border-t border-white/10 pt-5 text-sm text-gray-500">
+          Download: <a href="/data-project-checklist.md" download className="text-gray-300 underline-animate">Data Project Checklist</a>
         </div>
       </div>
     </section>
