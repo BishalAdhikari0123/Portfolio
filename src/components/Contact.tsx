@@ -58,8 +58,8 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+977 9867665905",
-      href: "tel:+9779867665905",
+      value: "+44 7344 847545",
+      href: "tel:+447344847545",
     },
     {
       icon: Mail,
@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Pokhara, Nepal",
+      value: "London, United Kingdom",
       href: null,
     },
   ];

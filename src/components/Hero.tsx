@@ -18,15 +18,6 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
-      {/* Subtle Gradient Orbs */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-[150px] animate-float"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white rounded-full blur-[150px] animate-float"
-          style={{ animationDelay: "2s" }}
-        ></div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
         <div className="text-center">
           <motion.div
@@ -61,7 +52,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="block"
               >
-                Full Stack Developer in Nepal
+                Data Science student and backend developer
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
@@ -69,7 +60,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="block text-gray-200 text-2xl sm:text-3xl lg:text-4xl font-semibold mt-3"
               >
-                Bishal Adhikari · Node.js Backend & Next.js Engineer
+                Bishal Adhikari · Python, TypeScript & Node.js
               </motion.span>
             </h1>
           </motion.div>
@@ -83,13 +74,12 @@ const Hero: React.FC = () => {
             {/* Location Badge */}
             <div className="inline-flex items-center px-6 py-3 glass-bw rounded-full mb-6 hover:glass-bw-strong transition-all duration-300">
               <MapPin size={18} className="text-white mr-2" />
-              <span className="text-gray-300 font-medium">Pokhara, Nepal</span>
+              <span className="text-gray-300 font-medium">London, United Kingdom</span>
             </div>
 
             <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              I help teams ship <span className="text-white font-semibold">scalable backend APIs</span>,{" "}
-              <span className="text-white font-semibold">real-time web systems</span>, and modern product experiences.
-              Specialized in Node.js, TypeScript, Next.js, PostgreSQL, and MongoDB.
+              I build practical software and data projects that turn messy requirements into clear, testable systems.
+              My work spans Python, SQL, machine learning, Node.js, TypeScript, PostgreSQL, and MongoDB.
             </p>
           </motion.div>
 

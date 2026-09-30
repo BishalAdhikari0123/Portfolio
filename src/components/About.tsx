@@ -11,27 +11,27 @@ const About: React.FC = () => {
   const highlights = [
     {
       icon: Server,
-      title: "Backend Expertise",
+      title: "Data and backend work",
       description:
-        "Specialized in building robust, scalable server-side applications with Node.js and TypeScript",
+      "Comfortable moving from data cleaning and feature engineering to APIs and maintainable server-side systems",
     },
     {
       icon: Globe,
-      title: "Full-Stack Capability",
+      title: "Useful analysis",
       description:
-        "Comprehensive understanding of both frontend and backend development ecosystems",
+      "Interested in making model outputs and product data understandable to the people who use them",
     },
     {
       icon: Zap,
-      title: "Performance Focused",
+      title: "Strong foundations",
       description:
-        "Optimizing applications for speed, efficiency, and seamless user experiences",
+      "Python, SQL, databases, testing, and clear documentation are part of how I approach a project",
     },
     {
       icon: Users,
-      title: "Collaborative Approach",
+      title: "Still learning",
       description:
-        "Experience working in teams and contributing to production systems",
+      "Currently completing an MSc in Data Science and building projects alongside postgraduate study",
     },
   ];
 
@@ -63,20 +63,19 @@ const About: React.FC = () => {
           >
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                Backend-focused full-stack developer with hands-on experience building scalable REST APIs and microservices.
-                Skilled in JavaScript/TypeScript, PostgreSQL, and MongoDB, and comfortable developing full-stack applications
-                with Next.js.
+                I am an MSc Data Science student and backend-focused developer based in London. I enjoy work that sits
+                between software engineering and analysis: reliable APIs, useful databases, and models that can be explained.
               </p>
 
               <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                My expertise lies in designing robust backend architectures using Node.js, Express.js, and modern ORMs like
-                Prisma. I have production experience implementing authentication systems (OAuth, JWT), real-time features
-                (WebSocket), and building microservice-based applications.
+                My recent projects use Python, Pandas, NumPy, Scikit-learn, SQL, and Streamlit alongside Node.js,
+                TypeScript, PostgreSQL, MongoDB, and Next.js. I care about evaluation, data quality, and the details that
+                make a system easier for another developer to pick up.
               </p>
 
               <p className="text-gray-300 leading-relaxed text-lg">
-                Highly motivated to deepen backend architecture skills and contribute to production systems. Currently exploring
-                advanced TypeScript backend patterns, PostgreSQL optimization, and scalable real-time architectures.
+                I am especially interested in customer behaviour, responsible machine learning, NLP, and product decisions
+                grounded in evidence. My goal is to keep building software that is technically sound and genuinely useful.
               </p>
             </div>
           </motion.div>

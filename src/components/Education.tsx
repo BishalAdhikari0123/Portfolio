@@ -10,6 +10,13 @@ const Education: React.FC = () => {
 
     const education = [
         {
+            institution: "York St John University",
+            degree: "MSc Data Science",
+            location: "London, United Kingdom",
+            period: "2026 – Present",
+            icon: "DS",
+        },
+        {
             institution: "LA GRANDEE International College",
             degree: "Bachelor of Computer Applications (BCA)",
             location: "Pokhara, Nepal",

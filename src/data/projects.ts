@@ -2,8 +2,38 @@ import { ProjectCaseStudy } from "../types/content";
 
 export const projectCaseStudies: ProjectCaseStudy[] = [
   {
+    slug: "community-support-risk-explorer",
+    title: "Community Support Risk Explorer",
+    summary:
+      "A reproducible data science project that helps councils and charities identify local authorities that may need further cost-of-living support investigation.",
+    year: "2026",
+    problem:
+      "Support teams need a way to compare area-level signals without turning a model into an eligibility decision. The project uses a deterministic synthetic dataset so the full workflow can be reproduced without credentials or a data licence.",
+    solution:
+      "I built a leakage-aware logistic regression pipeline with feature generation, calibration, threshold selection, holdout evaluation, permutation importance, and local explanations. The Streamlit dashboard presents the results for non-technical stakeholders and the repository includes data-quality tests, model-behaviour tests, a data dictionary, and an explicit ethics note.",
+    techUsed: ["Python", "Pandas", "Scikit-learn", "Streamlit", "Pytest", "Model Calibration"],
+    challenges: [
+      "Designing an evaluation that reports average precision and recall alongside ROC-AUC for a prioritisation use case.",
+      "Keeping feature generation and train/test handling reproducible while avoiding target leakage.",
+      "Explaining model probabilities and area-level proxies without presenting them as individual hardship decisions.",
+      "Documenting the boundary between a synthetic demo and future official ONS, DWP, housing, and energy data sources.",
+    ],
+    images: [
+      {
+        label: "Repository preview for the Community Support Risk Explorer",
+        url: "https://opengraph.githubassets.com/1/BishalAdhikari0123/community-support-risk-explorer",
+      },
+      {
+        label: "Interactive Streamlit dashboard and model explanation workflow",
+        url: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      },
+    ],
+    repoUrl: "https://github.com/BishalAdhikari0123/community-support-risk-explorer",
+    liveUrl: null,
+  },
+  {
     slug: "zombie-survival-fullstack-game",
-    title: "Zombie Survival Game 🧟",
+    title: "Zombie Survival Game",
     summary:
       "A fast-paced 2D top-down zombie survival game built with Next.js 14, TypeScript, and HTML Canvas with a custom game loop and modular systems.",
     year: "2026",

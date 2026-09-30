@@ -52,18 +52,18 @@ function App() {
   }, [location.pathname]);
 
   useEffect(() => {
-    const defaultTitle = "Bishal Adhikari | Full Stack Developer in Nepal (Node.js, Next.js)";
+    const defaultTitle = "Bishal Adhikari | Data Science Student & Backend Developer";
     const defaultDescription =
-      "Full Stack Developer in Nepal specializing in Node.js backend APIs, Next.js apps, and scalable real-time systems.";
+      "MSc Data Science student and backend-focused developer building practical machine learning projects, APIs, and data-driven products.";
 
     let title = defaultTitle;
     let description = defaultDescription;
     const canonicalPath = location.pathname === "/" ? "/" : location.pathname;
 
     if (location.pathname === "/") {
-      title = "Bishal Adhikari | Full Stack Developer in Nepal (Node.js, Next.js)";
+      title = "Bishal Adhikari | Data Science Student & Backend Developer";
       description =
-        "Backend-focused full stack developer building scalable APIs, real-time apps, and modern web platforms. View projects, tutorials, and hire options.";
+        "MSc Data Science student and backend-focused developer building practical machine learning projects, APIs, and data-driven products.";
     } else if (location.pathname === "/posts" || location.pathname === "/blog") {
       title = "Node.js & Next.js Blog | Bishal Adhikari";
       description =
@@ -77,8 +77,8 @@ function App() {
       description =
         "Explore real project case studies with problem, solution, technical decisions, and engineering outcomes.";
     } else if (location.pathname === "/contact") {
-      title = "Hire Full Stack Developer in Nepal | Contact Bishal Adhikari";
-      description = "Get in touch for backend API development, full-stack projects, and freelance engineering collaboration.";
+      title = "Contact Bishal Adhikari | Data and Backend Developer";
+      description = "Get in touch about data science, backend API development, full-stack projects, and engineering collaboration.";
     } else if (location.pathname === "/blog/new") {
       title = "Publish Blog Post | Bishal Adhikari";
       description = "Secure manual publishing page for adding blog posts and optional cover images.";
@@ -127,12 +127,12 @@ function App() {
         "@context": "https://schema.org",
         "@type": "Person",
         name: "Bishal Adhikari",
-        jobTitle: "Full Stack Developer",
+        jobTitle: "Data Science Student and Backend Developer",
         url: siteUrl,
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Pokhara",
-          addressCountry: "NP",
+          addressLocality: "London",
+          addressCountry: "GB",
         },
         sameAs: [
           "https://github.com/BishalAdhikari0123",

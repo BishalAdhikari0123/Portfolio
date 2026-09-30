@@ -12,12 +12,12 @@ const Experience: React.FC = () => {
         company: "BrandBuilder Pvt. Ltd.",
         position: "Backend Developer Intern",
         location: "Pokhara, Nepal",
-        period: "Jan 2025 – August 2025",
+        period: "Jan 2025 – Aug 2025",
         responsibilities: [
-            "Developing a ride-sharing mobile app using microservice architecture and React Native.",
-            "Implementing OAuth authentication, secure APIs, and modular services.",
-            "Integrated map APIs and MongoDB for geolocation features.",
-            "Collaborating with frontend team on real-time events and user flows.",
+            "Developed and maintained REST APIs using Node.js and TypeScript in a professional development environment.",
+            "Worked with MongoDB and backend data models to store, retrieve, and manage application data.",
+            "Implemented authentication and contributed to reliable, maintainable backend functionality.",
+            "Worked with developers to understand requirements, investigate issues, and solve technical problems.",
         ],
     };
 
@@ -102,7 +102,7 @@ const Experience: React.FC = () => {
 
                             <div className="mt-8 pt-6 border-t border-white/10">
                                 <div className="flex flex-wrap gap-2">
-                                    {["Microservices", "React Native", "OAuth", "MongoDB", "REST APIs", "Geolocation"].map((tech) => (
+                                    {["Node.js", "TypeScript", "MongoDB", "REST APIs", "Authentication", "Git"].map((tech) => (
                                         <span
                                             key={tech}
                                             className="px-4 py-2 bg-white/5 text-gray-300 text-sm font-medium rounded-full border border-white/20 hover:bg-white/10 hover:border-white/40 transition-all duration-200"

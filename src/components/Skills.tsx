@@ -10,7 +10,11 @@ const Skills: React.FC = () => {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["JavaScript", "TypeScript", "PHP", "C", "C++", "SQL", "NoSQL"],
+      skills: ["Python", "JavaScript", "TypeScript", "SQL", "PHP"],
+    },
+    {
+      title: "Data Science",
+      skills: ["Pandas", "NumPy", "Scikit-learn", "NLP", "EDA", "Streamlit"],
     },
     {
       title: "Backend",
