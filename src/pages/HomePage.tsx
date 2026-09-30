@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import Skills from "../components/Skills";
+import Services from "../components/Services";
 import Contact from "../components/Contact";
 import CaseStudyCard from "../components/CaseStudyCard";
 import BlogPostCard from "../components/BlogPostCard";
@@ -42,15 +43,16 @@ const HomePage: React.FC = () => {
       <About />
       <Experience />
       <Skills />
+      <Services />
 
       <section id="projects" className="py-20 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-14">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Featured Node.js & Next.js Case Studies</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Selected work</h2>
             <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-              Real projects explained with clear problem statements, implementation details, engineering trade-offs, and outcomes.
+              A mix of data science, backend, and full-stack projects, documented with the decisions and constraints behind the build.
             </p>
           </div>
 

@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mt-8">
-            Let's discuss your next project or potential collaboration opportunities
+            Tell me what you are trying to improve, what constraints matter, and what a useful outcome looks like.
           </p>
         </motion.div>
 
@@ -172,12 +172,11 @@ const Contact: React.FC = () => {
               className="glass-bw rounded-2xl p-8 border border-white/20 hover:glass-bw-strong transition-all duration-300"
             >
               <h3 className="text-xl font-bold text-white mb-4">
-                Let's Collaborate
+                Good projects start with a clear question
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting
-                projects, or just having a chat about technology and
-                development. Feel free to reach out!
+                I am open to focused freelance work, technical project support, collaborations, and junior data or backend roles.
+                You do not need a finished brief. A short description of the problem, current state, timeline, and budget range is enough to begin.
               </p>
             </motion.div>
           </motion.div>
@@ -190,7 +189,7 @@ const Contact: React.FC = () => {
             className="glass-bw rounded-2xl p-8 border border-white/20 hover:glass-bw-strong transition-all duration-300"
           >
             <h3 className="text-2xl font-bold text-white mb-6">
-              Send a Message
+              Start a conversation
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>

@@ -29,8 +29,10 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-1">Result</h4>
-          <p className="text-gray-400 text-sm leading-relaxed">{project.summary}</p>
+          <h4 className="text-white font-semibold mb-1">What this demonstrates</h4>
+          <p className="text-gray-400 text-sm leading-relaxed">
+            Clear technical decisions, documented trade-offs, and an implementation that can be reviewed rather than just admired.
+          </p>
         </div>
       </div>
 
@@ -57,12 +59,24 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
         </ul>
       </div>
 
-      <Link
-        to={`/projects/${project.slug}`}
-        className="inline-flex items-center px-5 py-2.5 bg-white text-black rounded-xl font-medium hover:bg-gray-200 transition-colors duration-200"
-      >
-        Read full case study
-      </Link>
+      <div className="flex flex-wrap gap-3">
+        <Link
+          to={`/projects/${project.slug}`}
+          className="inline-flex items-center px-5 py-2.5 bg-white text-black rounded-xl font-medium hover:bg-gray-200 transition-colors duration-200"
+        >
+          Read full case study
+        </Link>
+        {project.repoUrl && (
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-5 py-2.5 border border-white/25 rounded-xl text-gray-200 hover:bg-white/10 transition-colors duration-200"
+          >
+            View repository
+          </a>
+        )}
+      </div>
     </article>
   );
 };

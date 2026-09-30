@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="block"
               >
-                Data Science student and backend developer
+                I build useful systems from messy problems
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="block text-gray-200 text-2xl sm:text-3xl lg:text-4xl font-semibold mt-3"
               >
-                Bishal Adhikari · Python, TypeScript & Node.js
+                Bishal Adhikari · Data science, backend & product-minded engineering
               </motion.span>
             </h1>
           </motion.div>
@@ -78,8 +78,8 @@ const Hero: React.FC = () => {
             </div>
 
             <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              I build practical software and data projects that turn messy requirements into clear, testable systems.
-              My work spans Python, SQL, machine learning, Node.js, TypeScript, PostgreSQL, and MongoDB.
+              MSc Data Science student and backend-focused developer in London. I help turn unclear requirements,
+              operational data, and early product ideas into systems people can understand and use.
             </p>
           </motion.div>
 
@@ -111,19 +111,19 @@ const Hero: React.FC = () => {
               to="/contact"
               className="px-8 py-4 bg-white text-black font-semibold rounded-xl hover:bg-gray-200 hover-scale"
             >
-              Hire Me
+              Start a project
             </Link>
             <Link
               to="/projects"
               className="px-8 py-4 glass-bw text-white font-semibold rounded-xl border-2 border-white/20 hover:border-white/60 hover-scale"
             >
-              View Projects
+              See selected work
             </Link>
             <Link
               to="/blog"
               className="px-8 py-4 glass-bw text-white font-semibold rounded-xl border-2 border-white/20 hover:border-white/60 hover-scale"
             >
-              Read Blog
+              About me
             </Link>
           </motion.div>
 
