@@ -1,0 +1,90 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,margin=0.65in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{parskip}
+
+\definecolor{ink}{HTML}{121715}
+\definecolor{muted}{HTML}{4B5563}
+\definecolor{rule}{HTML}{D1D5DB}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\titleformat{\section}{\large\bfseries\color{ink}}{}{0pt}{}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+
+\newcommand{\entry}[4]{%
+  \textbf{#1}\hfill\textbf{#2}\\
+  \textit{#3}\hfill\textit{#4}\par
+}
+
+\begin{document}
+
+{\LARGE\bfseries Bishal Adhikari}\par
+\vspace{3pt}
+{\large Data Science Student and Backend Developer}\par
+\vspace{5pt}
+London, United Kingdom \quad | \quad
+\href{mailto:bsaladkari@gmail.com}{bsaladkari@gmail.com} \quad | \quad
++44 7344 847545\\
+\href{https://github.com/BishalAdhikari0123}{github.com/BishalAdhikari0123} \quad | \quad
+\href{https://www.linkedin.com/in/bishal-adhikari-051a09296/}{linkedin.com/in/bishal-adhikari-051a09296}
+
+\section*{Profile}
+MSc Data Science student and backend-focused developer based in London. I build practical machine learning workflows, reliable REST APIs, and data-driven products. Comfortable moving from data cleaning and feature engineering to model evaluation, explainability, and maintainable server-side systems.
+
+\section*{Education}
+\entry{MSc Data Science}{2026 -- Present}{York St John University}{London, United Kingdom}
+\entry{Bachelor of Computer Applications (BCA)}{2021 -- 2025}{LA GRANDEE International College}{Pokhara, Nepal}
+
+\section*{Experience}
+\entry{Backend Developer Intern}{Jan 2025 -- Aug 2025}{BrandBuilder Pvt. Ltd.}{Pokhara, Nepal}
+\begin{itemize}
+  \item Developed and maintained REST APIs using Node.js and TypeScript in a professional development environment.
+  \item Worked with MongoDB and backend data models to store, retrieve, and manage application data.
+  \item Implemented authentication and contributed to reliable, maintainable backend functionality.
+  \item Worked with developers to understand requirements, investigate issues, and solve technical problems.
+\end{itemize}
+
+\section*{Selected Projects}
+\entry{Community Support Risk Explorer}{2026}{Python, Pandas, Scikit-learn, Streamlit}{\href{https://github.com/BishalAdhikari0123/community-support-risk-explorer}{GitHub}}
+\begin{itemize}
+  \item Built a reproducible, leakage-aware logistic regression workflow for prioritising area-level support investigations.
+  \item Added calibration, threshold selection, holdout evaluation, permutation importance, and local explanations.
+  \item Documented data quality checks, model behaviour tests, the data dictionary, and responsible-use boundaries.
+\end{itemize}
+
+\entry{LevelUp - Skill Based Community App}{2025}{Next.js, Node.js, Express, Prisma, PostgreSQL}{\href{https://github.com/BishalAdhikari0123/LevelUp}{GitHub}}
+\begin{itemize}
+  \item Built a full-stack learning community with role-based access, activity points, profile milestones, and real-time chat.
+  \item Designed relational data models for users, achievements, activity logs, and progression rules.
+\end{itemize}
+
+\entry{TopCollec - Full-Stack Blog Platform}{2025}{Next.js, TypeScript, Supabase, Tailwind CSS}{\href{https://topcollec.vercel.app/}{Live site}}
+\begin{itemize}
+  \item Implemented a CMS-style publishing platform with protected admin tools, markdown authoring, storage uploads, search, and SEO metadata.
+  \item Used pagination, full-text discovery, and performance-focused rendering for content-heavy pages.
+\end{itemize}
+
+\section*{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
+Languages & Python, JavaScript, TypeScript, SQL, PHP \\
+Data Science & Pandas, NumPy, Scikit-learn, NLP, EDA, Streamlit, model evaluation \\
+Backend & Node.js, Express.js, Fastify, REST APIs, Prisma, Supabase, Mongoose \\
+Databases & PostgreSQL, MongoDB, MySQL \\
+Frontend and Deployment & Next.js, React, React Native, Tailwind CSS, Vercel, Render, Railway \\
+Tools and Practices & Git, Postman, JWT, OAuth, WebSocket, testing, modular design, MVC
+\end{tabularx}
+
+\section*{Certifications}
+Node.js with Express and MongoDB - BrandBuilder (2024)\\
+Basic Computer Course - Sega, Pokhara (2021)
+
+\end{document}

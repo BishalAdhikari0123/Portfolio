@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, FileCode2 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const Header: React.FC = () => {
@@ -68,6 +68,17 @@ const Header: React.FC = () => {
               <Download size={16} className="mr-2" />
               Resume
             </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/bishal_adhikari_cv.tex"
+              download
+              className="inline-flex items-center px-4 py-2.5 border border-white/25 text-white rounded-xl font-medium hover:bg-white/10 transition-all duration-200"
+              aria-label="Download LaTeX CV source"
+            >
+              <FileCode2 size={16} className="mr-2" />
+              LaTeX
+            </motion.a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -112,6 +123,16 @@ const Header: React.FC = () => {
               >
                 <Download size={16} className="mr-2" />
                 Resume
+              </motion.a>
+              <motion.a
+                whileTap={{ scale: 0.95 }}
+                href="/bishal_adhikari_cv.tex"
+                download
+                className="inline-flex items-center px-6 py-2.5 border border-white/25 text-white rounded-xl font-medium w-fit hover:bg-white/10 transition-all duration-200"
+                aria-label="Download LaTeX CV source"
+              >
+                <FileCode2 size={16} className="mr-2" />
+                LaTeX source
               </motion.a>
             </div>
           </motion.nav>
