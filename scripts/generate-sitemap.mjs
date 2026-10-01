@@ -14,7 +14,6 @@ const staticRoutes = [
   "/tutorials",
   "/privacy-policy",
   "/terms",
-  "/tools/model-metrics",
   "/tools",
 ];
 
